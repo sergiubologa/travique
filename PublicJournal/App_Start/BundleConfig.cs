@@ -19,7 +19,7 @@ namespace PublicJournal
             var nullOrderer = new NullOrderer();
 
             var cssBundle = new CustomStyleBundle("~/bundles/css");
-            cssBundle.Include("~/Content/bootstrap/bootstrap.less", "~/Content/css/bootstrap.min.css");
+            cssBundle.Include("~/Content/bootstrap/bootstrap.less", "~/Content/css/bootstrap.min.css", "~/Content/css/travique.css");
             cssBundle.Transforms.Add(cssTransformer);
             cssBundle.Orderer = nullOrderer;
             bundles.Add(cssBundle);
