@@ -11,7 +11,8 @@ namespace PublicJournal.Controllers
     {
         private LoginModel loginModel;
 
-        public HomeController(LoginModel login) {
+        public HomeController(LoginModel login) 
+        {
             loginModel = login;
         }
 

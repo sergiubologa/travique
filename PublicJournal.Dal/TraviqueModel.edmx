@@ -12,6 +12,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ImageName" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="Country">
           <Key>
@@ -456,6 +457,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ImageName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="EventCategories" Relationship="TraviqueModel.FK_EventCategory_GenericEvent" FromRole="Category" ToRole="EventCategory" />
         </EntityType>
         <EntityType Name="Country">
@@ -788,6 +790,7 @@
           <EntitySetMapping Name="Categories">
             <EntityTypeMapping TypeName="TraviqueModel.Category">
               <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="ImageName" ColumnName="ImageName" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
