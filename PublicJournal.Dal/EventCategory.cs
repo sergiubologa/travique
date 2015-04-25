@@ -12,10 +12,12 @@ namespace PublicJournal.Dal
     using System;
     using System.Collections.Generic;
     
-    public partial class Category
+    public partial class EventCategory
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
+        public int GenericEventId { get; set; }
+        public int CategoryId { get; set; }
+    
+        public virtual GenericEvent GenericEvent { get; set; }
     }
 }
