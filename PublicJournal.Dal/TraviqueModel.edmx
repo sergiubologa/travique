@@ -4,60 +4,28 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="TraviqueModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityContainer Name="TraviqueModelStoreContainer">
-          <EntitySet Name="Category" EntityType="TraviqueModel.Store.Category" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Country" EntityType="TraviqueModel.Store.Country" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Event" EntityType="TraviqueModel.Store.Event" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="EventCategory" EntityType="TraviqueModel.Store.EventCategory" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="EventTestimonial" EntityType="TraviqueModel.Store.EventTestimonial" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="FlightInfo" EntityType="TraviqueModel.Store.FlightInfo" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="GenericEvent" EntityType="TraviqueModel.Store.GenericEvent" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="HotelInfo" EntityType="TraviqueModel.Store.HotelInfo" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Role" EntityType="TraviqueModel.Store.Role" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="User" EntityType="TraviqueModel.Store.User" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="FK_EventCategory_GenericEvent" Association="TraviqueModel.Store.FK_EventCategory_GenericEvent">
-            <End Role="GenericEvent" EntitySet="GenericEvent" />
-            <End Role="EventCategory" EntitySet="EventCategory" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EventTestimonial_Event" Association="TraviqueModel.Store.FK_EventTestimonial_Event">
-            <End Role="Event" EntitySet="Event" />
-            <End Role="EventTestimonial" EntitySet="EventTestimonial" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EventTestimonial_GenericEvent" Association="TraviqueModel.Store.FK_EventTestimonial_GenericEvent">
-            <End Role="GenericEvent" EntitySet="GenericEvent" />
-            <End Role="EventTestimonial" EntitySet="EventTestimonial" />
-          </AssociationSet>
-          <AssociationSet Name="FK_GenericEvent_Country" Association="TraviqueModel.Store.FK_GenericEvent_Country">
-            <End Role="Country" EntitySet="Country" />
-            <End Role="GenericEvent" EntitySet="GenericEvent" />
-          </AssociationSet>
-          <AssociationSet Name="FK_User_Role" Association="TraviqueModel.Store.FK_User_Role">
-            <End Role="Role" EntitySet="Role" />
-            <End Role="User" EntitySet="User" />
-          </AssociationSet>
-        </EntityContainer>
+    <Schema Namespace="TraviqueModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="Country">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="Feedback" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="Event">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
           <Property Name="ImageName" Type="nvarchar(max)" Nullable="false" />
@@ -67,7 +35,7 @@
           <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
           <Property Name="City" Type="nvarchar(max)" Nullable="false" />
           <Property Name="CountryId" Type="int" Nullable="false" />
-          <Property Name="TicketPrice" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="TicketPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="FlightId" Type="int" Nullable="false" />
           <Property Name="HotelId" Type="int" Nullable="false" />
         </EntityType>
@@ -75,7 +43,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="GenericEventId" Type="int" Nullable="false" />
           <Property Name="CategoryId" Type="int" Nullable="false" />
         </EntityType>
@@ -83,7 +51,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EventID" Type="int" Nullable="false" />
           <Property Name="GenericEventID" Type="int" Nullable="false" />
           <Property Name="Rate" Type="int" Nullable="false" />
@@ -94,18 +62,18 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="FlightNo" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="FlightNo" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="DepartureTime" Type="datetime" Nullable="false" />
-          <Property Name="DepartureAirport" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="DepartureAirport" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="LandingTime" Type="datetime" Nullable="false" />
-          <Property Name="LandingAirport" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="LandingAirport" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="TicketPrice" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="GenericEvent">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
           <Property Name="CountryId" Type="int" Nullable="false" />
@@ -114,12 +82,12 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
           <Property Name="ImageFolderPath" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Stars" Type="int" Nullable="false" />
-          <Property Name="RoomPrice" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="RoomPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
           <Property Name="City" Type="nvarchar(max)" Nullable="false" />
           <Property Name="CountryId" Type="int" Nullable="false" />
@@ -130,26 +98,26 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="150" />
-          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" Nullable="false" />
         </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="150" />
-          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="Firstname" Type="nvarchar" Nullable="false" MaxLength="150" />
-          <Property Name="Lastname" Type="nvarchar" Nullable="false" MaxLength="150" />
-          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Firstname" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Lastname" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="DateCreated" Type="datetime" Nullable="false" />
           <Property Name="RoleId" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_EventCategory_GenericEvent">
-          <End Role="GenericEvent" Type="TraviqueModel.Store.GenericEvent" Multiplicity="1" />
-          <End Role="EventCategory" Type="TraviqueModel.Store.EventCategory" Multiplicity="*" />
+          <End Role="GenericEvent" Type="Self.GenericEvent" Multiplicity="1" />
+          <End Role="EventCategory" Type="Self.EventCategory" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="GenericEvent">
               <PropertyRef Name="Id" />
@@ -160,8 +128,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_EventTestimonial_Event">
-          <End Role="Event" Type="TraviqueModel.Store.Event" Multiplicity="1" />
-          <End Role="EventTestimonial" Type="TraviqueModel.Store.EventTestimonial" Multiplicity="*" />
+          <End Role="Event" Type="Self.Event" Multiplicity="1" />
+          <End Role="EventTestimonial" Type="Self.EventTestimonial" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Event">
               <PropertyRef Name="Id" />
@@ -172,8 +140,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_EventTestimonial_GenericEvent">
-          <End Role="GenericEvent" Type="TraviqueModel.Store.GenericEvent" Multiplicity="1" />
-          <End Role="EventTestimonial" Type="TraviqueModel.Store.EventTestimonial" Multiplicity="*" />
+          <End Role="GenericEvent" Type="Self.GenericEvent" Multiplicity="1" />
+          <End Role="EventTestimonial" Type="Self.EventTestimonial" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="GenericEvent">
               <PropertyRef Name="Id" />
@@ -184,8 +152,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_GenericEvent_Country">
-          <End Role="Country" Type="TraviqueModel.Store.Country" Multiplicity="1" />
-          <End Role="GenericEvent" Type="TraviqueModel.Store.GenericEvent" Multiplicity="*" />
+          <End Role="Country" Type="Self.Country" Multiplicity="1" />
+          <End Role="GenericEvent" Type="Self.GenericEvent" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Country">
               <PropertyRef Name="Id" />
@@ -196,8 +164,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_User_Role">
-          <End Role="Role" Type="TraviqueModel.Store.Role" Multiplicity="1" />
-          <End Role="User" Type="TraviqueModel.Store.User" Multiplicity="*" />
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Role">
               <PropertyRef Name="Id" />
@@ -207,6 +175,38 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityContainer Name="TraviqueModelStoreContainer">
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EventCategory" EntityType="Self.EventCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EventTestimonial" EntityType="Self.EventTestimonial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FlightInfo" EntityType="Self.FlightInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GenericEvent" EntityType="Self.GenericEvent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HotelInfo" EntityType="Self.HotelInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_EventCategory_GenericEvent" Association="Self.FK_EventCategory_GenericEvent">
+            <End Role="GenericEvent" EntitySet="GenericEvent" />
+            <End Role="EventCategory" EntitySet="EventCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventTestimonial_Event" Association="Self.FK_EventTestimonial_Event">
+            <End Role="Event" EntitySet="Event" />
+            <End Role="EventTestimonial" EntitySet="EventTestimonial" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventTestimonial_GenericEvent" Association="Self.FK_EventTestimonial_GenericEvent">
+            <End Role="GenericEvent" EntitySet="GenericEvent" />
+            <End Role="EventTestimonial" EntitySet="EventTestimonial" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GenericEvent_Country" Association="Self.FK_GenericEvent_Country">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="GenericEvent" EntitySet="GenericEvent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -247,56 +247,56 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Country">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Feedback" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Feedback" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="GenericEvents" Relationship="TraviqueModel.FK_GenericEvent_Country" FromRole="Country" ToRole="GenericEvent" />
         </EntityType>
         <EntityType Name="Event">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="ImageName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="StartDate" Nullable="false" Precision="3" />
-          <Property Type="DateTime" Name="EndDate" Nullable="false" Precision="3" />
-          <Property Type="Int32" Name="GenericEventId" Nullable="false" />
-          <Property Type="String" Name="Address" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="City" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Type="Int32" Name="CountryId" Nullable="false" />
-          <Property Type="Decimal" Name="TicketPrice" Nullable="false" Precision="18" Scale="2" />
-          <Property Type="Int32" Name="FlightId" Nullable="false" />
-          <Property Type="Int32" Name="HotelId" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ImageName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="GenericEventId" Type="Int32" Nullable="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CountryId" Type="Int32" Nullable="false" />
+          <Property Name="TicketPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="FlightId" Type="Int32" Nullable="false" />
+          <Property Name="HotelId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="EventTestimonials" Relationship="TraviqueModel.FK_EventTestimonial_Event" FromRole="Event" ToRole="EventTestimonial" />
         </EntityType>
         <EntityType Name="EventCategory">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="GenericEventId" Nullable="false" />
-          <Property Type="Int32" Name="CategoryId" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GenericEventId" Type="Int32" Nullable="false" />
+          <Property Name="CategoryId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="GenericEvent" Relationship="TraviqueModel.FK_EventCategory_GenericEvent" FromRole="EventCategory" ToRole="GenericEvent" />
         </EntityType>
         <EntityType Name="EventTestimonial">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="EventID" Nullable="false" />
-          <Property Type="Int32" Name="GenericEventID" Nullable="false" />
-          <Property Type="Int32" Name="Rate" Nullable="false" />
-          <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EventID" Type="Int32" Nullable="false" />
+          <Property Name="GenericEventID" Type="Int32" Nullable="false" />
+          <Property Name="Rate" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Event" Relationship="TraviqueModel.FK_EventTestimonial_Event" FromRole="EventTestimonial" ToRole="Event" />
           <NavigationProperty Name="GenericEvent" Relationship="TraviqueModel.FK_EventTestimonial_GenericEvent" FromRole="EventTestimonial" ToRole="GenericEvent" />
         </EntityType>
@@ -304,22 +304,22 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" />
-          <Property Type="String" Name="FlightNo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="DepartureTime" Nullable="false" Precision="3" />
-          <Property Type="String" Name="DepartureAirport" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="LandingTime" Nullable="false" Precision="3" />
-          <Property Type="String" Name="LandingAirport" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Type="Int32" Name="TicketPrice" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="FlightNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DepartureTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DepartureAirport" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="LandingTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LandingAirport" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TicketPrice" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="GenericEvent">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Type="Int32" Name="CountryId" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CountryId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Country" Relationship="TraviqueModel.FK_GenericEvent_Country" FromRole="GenericEvent" ToRole="Country" />
           <NavigationProperty Name="EventCategories" Relationship="TraviqueModel.FK_EventCategory_GenericEvent" FromRole="GenericEvent" ToRole="EventCategory" />
           <NavigationProperty Name="EventTestimonials" Relationship="TraviqueModel.FK_EventTestimonial_GenericEvent" FromRole="GenericEvent" ToRole="EventTestimonial" />
@@ -328,39 +328,39 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="ImageFolderPath" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Type="Int32" Name="Stars" Nullable="false" />
-          <Property Type="Decimal" Name="RoomPrice" Nullable="false" Precision="18" Scale="2" />
-          <Property Type="String" Name="Address" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="City" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Type="Int32" Name="CountryId" Nullable="false" />
-          <Property Type="String" Name="ContactEmail" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Type="Int32" Name="ContactPhone" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ImageFolderPath" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Stars" Type="Int32" Nullable="false" />
+          <Property Name="RoomPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CountryId" Type="Int32" Nullable="false" />
+          <Property Name="ContactEmail" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ContactPhone" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Description" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Users" Relationship="TraviqueModel.FK_User_Role" FromRole="Role" ToRole="User" />
         </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="Username" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Password" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Firstname" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Lastname" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Email" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="DateCreated" Nullable="false" Precision="3" />
-          <Property Type="Int32" Name="RoleId" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Firstname" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Lastname" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Role" Relationship="TraviqueModel.FK_User_Role" FromRole="User" ToRole="Role" />
         </EntityType>
         <Association Name="FK_GenericEvent_Country">
@@ -423,7 +423,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>

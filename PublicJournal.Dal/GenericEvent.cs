@@ -16,6 +16,7 @@ namespace PublicJournal.Dal
     {
         public GenericEvent()
         {
+            this.EventCategories = new HashSet<EventCategory>();
             this.EventTestimonials = new HashSet<EventTestimonial>();
         }
     
@@ -23,10 +24,9 @@ namespace PublicJournal.Dal
         public string Name { get; set; }
         public string Description { get; set; }
         public int CountryId { get; set; }
-        public int CategoryId { get; set; }
     
-        public virtual Category Category { get; set; }
         public virtual Country Country { get; set; }
+        public virtual ICollection<EventCategory> EventCategories { get; set; }
         public virtual ICollection<EventTestimonial> EventTestimonials { get; set; }
     }
 }

@@ -5,16 +5,16 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="4cf8862b0d414ddea5af18994710b16c" Name="Diagram1" ZoomLevel="88">
-        <EntityTypeShape EntityType="TraviqueModel.Category" Width="1.5" PointX="9.6999767952132867" PointY="29.84241825241708" />
-        <EntityTypeShape EntityType="TraviqueModel.Country" Width="1.5" PointX="8.4995182475538549" PointY="5.7220469143809973" />
-        <EntityTypeShape EntityType="TraviqueModel.Event" Width="1.5" PointX="2.2823879654902912" PointY="16.610907085524364" />
-        <EntityTypeShape EntityType="TraviqueModel.EventCategory" Width="1.5" PointX="11.693335795632255" PointY="0.59468634454286018" />
-        <EntityTypeShape EntityType="TraviqueModel.EventTestimonial" Width="1.5" PointX="5.8623459347814073" PointY="5.2759984607230868" />
-        <EntityTypeShape EntityType="TraviqueModel.FlightInfo" Width="1.5" PointX="4.0394825395380529" PointY="28.749452857649629" />
-        <EntityTypeShape EntityType="TraviqueModel.GenericEvent" Width="1.5" PointX="6.9246827321707656" PointY="5.7479402747694124" />
-        <EntityTypeShape EntityType="TraviqueModel.HotelInfo" Width="1.5" PointX="11.990681743244958" PointY="5.3147398854208827" />
-        <EntityTypeShape EntityType="TraviqueModel.Role" Width="1.5" PointX="8.419775217967004" PointY="8.1773652919462716" />
-        <EntityTypeShape EntityType="TraviqueModel.User" Width="1.5" PointX="11.990373227740811" PointY="8.1356020160650839" />
+        <EntityTypeShape EntityType="TraviqueModel.Category" Width="1.5" PointX="7.75" PointY="4.75" />
+        <EntityTypeShape EntityType="TraviqueModel.Country" Width="1.5" PointX="0.75" PointY="2.625" />
+        <EntityTypeShape EntityType="TraviqueModel.Event" Width="1.5" PointX="3" PointY="6.625" />
+        <EntityTypeShape EntityType="TraviqueModel.EventCategory" Width="1.5" PointX="5.25" PointY="5.75" />
+        <EntityTypeShape EntityType="TraviqueModel.EventTestimonial" Width="1.5" PointX="5.25" PointY="2.375" />
+        <EntityTypeShape EntityType="TraviqueModel.FlightInfo" Width="1.5" PointX="7.75" PointY="7.75" />
+        <EntityTypeShape EntityType="TraviqueModel.GenericEvent" Width="1.5" PointX="3" PointY="2.375" />
+        <EntityTypeShape EntityType="TraviqueModel.HotelInfo" Width="1.5" PointX="9.75" PointY="4.75" />
+        <EntityTypeShape EntityType="TraviqueModel.Role" Width="1.5" PointX="7.75" PointY="1.5" />
+        <EntityTypeShape EntityType="TraviqueModel.User" Width="1.5" PointX="10" PointY="1" />
         <AssociationConnector Association="TraviqueModel.FK_GenericEvent_Country" />
         <AssociationConnector Association="TraviqueModel.FK_EventTestimonial_Event" />
         <AssociationConnector Association="TraviqueModel.FK_EventCategory_GenericEvent" />

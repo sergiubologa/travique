@@ -119,6 +119,9 @@
     <Compile Include="Event.cs">
       <DependentUpon>TraviqueModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="EventCategory.cs">
+      <DependentUpon>TraviqueModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="EventTestimonial.cs">
       <DependentUpon>TraviqueModel.tt</DependentUpon>
     </Compile>
