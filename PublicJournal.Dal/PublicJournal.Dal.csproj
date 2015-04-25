@@ -109,12 +109,14 @@
       <DependentUpon>TraviqueModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Contracts\IDao.cs" />
+    <Compile Include="Contracts\IEventDao.cs" />
     <Compile Include="Contracts\IObjectContext.cs" />
     <Compile Include="Contracts\IUserDao.cs" />
     <Compile Include="Country.cs">
       <DependentUpon>TraviqueModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Dao\AbstractDao.cs" />
+    <Compile Include="Dao\EventDao.cs" />
     <Compile Include="Dao\UserDao.cs" />
     <Compile Include="Event.cs">
       <DependentUpon>TraviqueModel.tt</DependentUpon>

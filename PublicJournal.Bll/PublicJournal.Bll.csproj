@@ -88,7 +88,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="Bus\EventBus.cs" />
     <Compile Include="Bus\UserBus.cs" />
+    <Compile Include="Contracts\IEventBus.cs" />
     <Compile Include="Contracts\IUserBus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
