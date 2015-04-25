@@ -1,0 +1,15 @@
+﻿.navbar {
+    min-height:80px;
+}
+@media (min-width: 768px) {
+    :last-child.navbar-right.navbar-nav {
+        margin-top:15px;
+    }
+}
+@media (min-width: 768px) {
+    .navbar-nav > li > span, .navbar-nav > li > img {
+        display:block;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
