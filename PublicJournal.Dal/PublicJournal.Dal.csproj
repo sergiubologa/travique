@@ -145,6 +145,9 @@
     <Compile Include="Role.cs">
       <DependentUpon>TraviqueModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>TraviqueModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="TraviqueModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

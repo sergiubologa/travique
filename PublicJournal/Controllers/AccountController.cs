@@ -28,13 +28,14 @@ namespace PublicJournal.Controllers
         }
 
         [HttpGet]
-        public ActionResult LogIn()
+        public ActionResult LogIn(string returnUrl)
         {
+            ViewBag.ReturnUrl = returnUrl;
             return View();
         }
 
         [HttpPost]
-        public ActionResult LogIn(LoginModel login)
+        public ActionResult LogIn(LoginModel login, string returnUrl)
         {
             if (ModelState.IsValid)
             {
@@ -43,6 +44,7 @@ namespace PublicJournal.Controllers
                 if (login.WrongPassword == null && login.WrongUsername == null)
                 {
                     Session.Add("user", user);
+                    return RedirectToLocal(returnUrl);
                 }
                 else
                 {
@@ -51,6 +53,18 @@ namespace PublicJournal.Controllers
                 }
             }
             return PartialView("_LoginPartial", login);
+        }
+
+        private ActionResult RedirectToLocal(string returnUrl)
+        {
+            if (Url.IsLocalUrl(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
 
         public ActionResult LogOff()

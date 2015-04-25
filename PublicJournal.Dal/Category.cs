@@ -14,8 +14,15 @@ namespace PublicJournal.Dal
     
     public partial class Category
     {
+        public Category()
+        {
+            this.EventCategories = new HashSet<EventCategory>();
+        }
+    
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+    
+        public virtual ICollection<EventCategory> EventCategories { get; set; }
     }
 }

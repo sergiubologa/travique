@@ -18,6 +18,7 @@ namespace PublicJournal.Dal
         public int GenericEventId { get; set; }
         public int CategoryId { get; set; }
     
+        public virtual Category Category { get; set; }
         public virtual GenericEvent GenericEvent { get; set; }
     }
 }
