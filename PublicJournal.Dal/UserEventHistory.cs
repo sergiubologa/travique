@@ -17,6 +17,7 @@ namespace PublicJournal.Dal
         public UserEventHistory()
         {
             this.EventRevenues = new HashSet<EventRevenue>();
+            this.Revenues1 = new HashSet<Revenue>();
         }
     
         public int Id { get; set; }
@@ -31,6 +32,7 @@ namespace PublicJournal.Dal
         public virtual ICollection<EventRevenue> EventRevenues { get; set; }
         public virtual FlightInfo FlightInfo { get; set; }
         public virtual HotelInfo HotelInfo { get; set; }
+        public virtual ICollection<Revenue> Revenues1 { get; set; }
         public virtual User User { get; set; }
     }
 }

@@ -12,12 +12,12 @@ namespace PublicJournal.Dal
     using System;
     using System.Collections.Generic;
     
-    public partial class Revenue
+    public partial class sysdiagram
     {
-        public int Id { get; set; }
-        public int UserEventHistoryId { get; set; }
-        public int Revenue1 { get; set; }
-    
-        public virtual UserEventHistory UserEventHistory { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

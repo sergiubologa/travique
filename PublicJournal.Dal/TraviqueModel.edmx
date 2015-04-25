@@ -118,6 +118,16 @@
           <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="500" Nullable="false" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="Id" />
@@ -144,6 +154,18 @@
           <Property Name="Revenues" Type="decimal" Precision="18" Scale="2" Nullable="false" />
         </EntityType>
         <Association Name="FK_EventCategory_GenericEvent">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="EventCategory" Type="Self.EventCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EventCategory">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventCategory_GenericEvent1">
           <End Role="GenericEvent" Type="Self.GenericEvent" Multiplicity="1" />
           <End Role="EventCategory" Type="Self.EventCategory" Multiplicity="*" />
           <ReferentialConstraint>
@@ -200,6 +222,18 @@
             </Principal>
             <Dependent Role="GenericEvent">
               <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Revenue_UserEventHistory">
+          <End Role="UserEventHistory" Type="Self.UserEventHistory" Multiplicity="1" />
+          <End Role="Revenue" Type="Self.Revenue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserEventHistory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Revenue">
+              <PropertyRef Name="UserEventHistoryId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -275,9 +309,14 @@
           <EntitySet Name="HotelInfo" EntityType="Self.HotelInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Revenue" EntityType="Self.Revenue" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserEventHistory" EntityType="Self.UserEventHistory" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_EventCategory_GenericEvent" Association="Self.FK_EventCategory_GenericEvent">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="EventCategory" EntitySet="EventCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventCategory_GenericEvent1" Association="Self.FK_EventCategory_GenericEvent1">
             <End Role="GenericEvent" EntitySet="GenericEvent" />
             <End Role="EventCategory" EntitySet="EventCategory" />
           </AssociationSet>
@@ -296,6 +335,10 @@
           <AssociationSet Name="FK_GenericEvent_Country" Association="Self.FK_GenericEvent_Country">
             <End Role="Country" EntitySet="Country" />
             <End Role="GenericEvent" EntitySet="GenericEvent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Revenue_UserEventHistory" Association="Self.FK_Revenue_UserEventHistory">
+            <End Role="UserEventHistory" EntitySet="UserEventHistory" />
+            <End Role="Revenue" EntitySet="Revenue" />
           </AssociationSet>
           <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
             <End Role="Role" EntitySet="Role" />
@@ -334,8 +377,13 @@
           <EntitySet Name="HotelInfoes" EntityType="TraviqueModel.HotelInfo" />
           <EntitySet Name="Revenues" EntityType="TraviqueModel.Revenue" />
           <EntitySet Name="Roles" EntityType="TraviqueModel.Role" />
+          <EntitySet Name="sysdiagrams" EntityType="TraviqueModel.sysdiagram" />
           <EntitySet Name="Users" EntityType="TraviqueModel.User" />
           <EntitySet Name="UserEventHistories" EntityType="TraviqueModel.UserEventHistory" />
+          <AssociationSet Name="FK_EventCategory_GenericEvent" Association="TraviqueModel.FK_EventCategory_GenericEvent">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="EventCategory" EntitySet="EventCategories" />
+          </AssociationSet>
           <AssociationSet Name="FK_GenericEvent_Country" Association="TraviqueModel.FK_GenericEvent_Country">
             <End Role="Country" EntitySet="Countries" />
             <End Role="GenericEvent" EntitySet="GenericEvents" />
@@ -348,7 +396,7 @@
             <End Role="Event" EntitySet="Events" />
             <End Role="UserEventHistory" EntitySet="UserEventHistories" />
           </AssociationSet>
-          <AssociationSet Name="FK_EventCategory_GenericEvent" Association="TraviqueModel.FK_EventCategory_GenericEvent">
+          <AssociationSet Name="FK_EventCategory_GenericEvent1" Association="TraviqueModel.FK_EventCategory_GenericEvent1">
             <End Role="GenericEvent" EntitySet="GenericEvents" />
             <End Role="EventCategory" EntitySet="EventCategories" />
           </AssociationSet>
@@ -368,6 +416,10 @@
             <End Role="HotelInfo" EntitySet="HotelInfoes" />
             <End Role="UserEventHistory" EntitySet="UserEventHistories" />
           </AssociationSet>
+          <AssociationSet Name="FK_Revenue_UserEventHistory" Association="TraviqueModel.FK_Revenue_UserEventHistory">
+            <End Role="UserEventHistory" EntitySet="UserEventHistories" />
+            <End Role="Revenue" EntitySet="Revenues" />
+          </AssociationSet>
           <AssociationSet Name="FK_User_Role" Association="TraviqueModel.FK_User_Role">
             <End Role="Role" EntitySet="Roles" />
             <End Role="User" EntitySet="Users" />
@@ -384,6 +436,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EventCategories" Relationship="TraviqueModel.FK_EventCategory_GenericEvent" FromRole="Category" ToRole="EventCategory" />
         </EntityType>
         <EntityType Name="Country">
           <Key>
@@ -421,7 +474,8 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="GenericEventId" Type="Int32" Nullable="false" />
           <Property Name="CategoryId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="GenericEvent" Relationship="TraviqueModel.FK_EventCategory_GenericEvent" FromRole="EventCategory" ToRole="GenericEvent" />
+          <NavigationProperty Name="Category" Relationship="TraviqueModel.FK_EventCategory_GenericEvent" FromRole="EventCategory" ToRole="Category" />
+          <NavigationProperty Name="GenericEvent" Relationship="TraviqueModel.FK_EventCategory_GenericEvent1" FromRole="EventCategory" ToRole="GenericEvent" />
         </EntityType>
         <EntityType Name="EventRevenue">
           <Key>
@@ -466,7 +520,7 @@
           <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CountryId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Country" Relationship="TraviqueModel.FK_GenericEvent_Country" FromRole="GenericEvent" ToRole="Country" />
-          <NavigationProperty Name="EventCategories" Relationship="TraviqueModel.FK_EventCategory_GenericEvent" FromRole="GenericEvent" ToRole="EventCategory" />
+          <NavigationProperty Name="EventCategories" Relationship="TraviqueModel.FK_EventCategory_GenericEvent1" FromRole="GenericEvent" ToRole="EventCategory" />
           <NavigationProperty Name="EventTestimonials" Relationship="TraviqueModel.FK_EventTestimonial_GenericEvent" FromRole="GenericEvent" ToRole="EventTestimonial" />
         </EntityType>
         <EntityType Name="HotelInfo">
@@ -493,6 +547,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="UserEventHistoryId" Type="Int32" Nullable="false" />
           <Property Name="Revenue1" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UserEventHistory" Relationship="TraviqueModel.FK_Revenue_UserEventHistory" FromRole="Revenue" ToRole="UserEventHistory" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -502,6 +557,16 @@
           <Property Name="Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Users" Relationship="TraviqueModel.FK_User_Role" FromRole="Role" ToRole="User" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -533,8 +598,21 @@
           <NavigationProperty Name="EventRevenues" Relationship="TraviqueModel.FK_EventRevenue_UserEventHistory" FromRole="UserEventHistory" ToRole="EventRevenue" />
           <NavigationProperty Name="FlightInfo" Relationship="TraviqueModel.FK_UserEventHistory_FlightInfo" FromRole="UserEventHistory" ToRole="FlightInfo" />
           <NavigationProperty Name="HotelInfo" Relationship="TraviqueModel.FK_UserEventHistory_HotelInfo" FromRole="UserEventHistory" ToRole="HotelInfo" />
+          <NavigationProperty Name="Revenues1" Relationship="TraviqueModel.FK_Revenue_UserEventHistory" FromRole="UserEventHistory" ToRole="Revenue" />
           <NavigationProperty Name="User" Relationship="TraviqueModel.FK_UserEventHistory_User" FromRole="UserEventHistory" ToRole="User" />
         </EntityType>
+        <Association Name="FK_EventCategory_GenericEvent">
+          <End Type="TraviqueModel.Category" Role="Category" Multiplicity="1" />
+          <End Type="TraviqueModel.EventCategory" Role="EventCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EventCategory">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_GenericEvent_Country">
           <End Type="TraviqueModel.Country" Role="Country" Multiplicity="1" />
           <End Type="TraviqueModel.GenericEvent" Role="GenericEvent" Multiplicity="*" />
@@ -571,7 +649,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_EventCategory_GenericEvent">
+        <Association Name="FK_EventCategory_GenericEvent1">
           <End Type="TraviqueModel.GenericEvent" Role="GenericEvent" Multiplicity="1" />
           <End Type="TraviqueModel.EventCategory" Role="EventCategory" Multiplicity="*" />
           <ReferentialConstraint>
@@ -628,6 +706,18 @@
             </Principal>
             <Dependent Role="UserEventHistory">
               <PropertyRef Name="HotelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Revenue_UserEventHistory">
+          <End Type="TraviqueModel.UserEventHistory" Role="UserEventHistory" Multiplicity="1" />
+          <End Type="TraviqueModel.Revenue" Role="Revenue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserEventHistory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Revenue">
+              <PropertyRef Name="UserEventHistoryId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -782,6 +872,17 @@
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="TraviqueModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
