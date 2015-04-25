@@ -27,6 +27,12 @@ namespace PublicJournal.Controllers
             _iuserBus = _iuser;
         }
 
+        [HttpGet]
+        public ActionResult LogIn()
+        {
+            return View();
+        }
+
         [HttpPost]
         public ActionResult LogIn(LoginModel login)
         {

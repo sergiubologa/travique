@@ -11,7 +11,7 @@ namespace PublicJournal.Dal
     public class PublicJournalDataContext : ObjectContext, IObjectContext, IDisposable
     {
         public PublicJournalDataContext()
-            : base("name= Blog_trainingEntities", "Blog_trainingEntities")
+            : base("name= TraviqueEntities", "TraviqueEntities")
             {
                 this.ContextOptions.LazyLoadingEnabled = true;
             }
