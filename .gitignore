@@ -1,0 +1,29 @@
+<<<<<<< HEAD
+#ignore thumbnails created by windows
+=======
+#ignore thumbnails created by Windows
+>>>>>>> e38b8bfbbd47715fe48a782bf7b148a2b6e98e3b
+Thumbs.db
+#Ignore files build by Visual Studio
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.bak
+*.cache
+*.ilk
+*.log
+[Bb]in
+[Dd]ebug*/
+*.sbr
+obj/
+[Rr]elease*/
+_ReSharper*/
+MVC5GenericArchitecture/bin/*.dll
+
+MVC5GenericArchitecture\obj\Debug*/
+MVC5GenericArchitecture.v12.suo

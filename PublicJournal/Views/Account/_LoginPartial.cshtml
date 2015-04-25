@@ -1,0 +1,50 @@
+﻿@using Microsoft.AspNet.Identity
+@using PublicJournal.Models.Models
+@model LoginModel
+
+@{
+    UserModel user = (UserModel)Session["user"];
+    AjaxOptions ajaxOpts = new AjaxOptions
+    {
+        LoadingElementDuration = 100,
+        UpdateTargetId = "new",
+    };
+}
+
+
+@if (user != null)
+{
+    using (Ajax.BeginForm("Logoff", "Account", null, new AjaxOptions { Url = Url.Content("/Account/Logoff"), InsertionMode = InsertionMode.Replace, UpdateTargetId = "login" }, new { id = "loginForm", @class = "login-block" }))
+    {
+        @Html.AntiForgeryToken()
+        <div>
+            @Html.ActionLink("Hello " + user.Username + "!", "Manage", "Account", routeValues: null, htmlAttributes: new { title = "Manage", @class = "btn btn-primary" })
+            <button type="submit" class="btn btn-primary">Log off</button>
+        </div>
+    }
+}
+else
+{
+    using (Ajax.BeginForm("LogIn", "Account", null, new AjaxOptions { Url = Url.Content("/Account/Login"), InsertionMode = InsertionMode.Replace, UpdateTargetId = "login" }, new { id = "loginForm", @class = "login-block" }))
+    {
+        @Html.Label("Username", htmlAttributes: new { @class = "text-white" })
+        <p>@Html.ValidationMessageFor(m => m.Username)</p>
+        <p>@Html.TextBoxFor(m => m.Username)</p>
+        @Html.Label("Password", htmlAttributes: new { @class = "text-white" })
+        <p>@Html.ValidationMessageFor(m => m.Password)</p>
+        <p>@Html.PasswordFor(m => m.Password)</p>
+
+        
+            <button type="submit" value="Log in" class="btn btn-default">Log In</button>
+    <hr />
+    <div>
+            @Html.ActionLink("Forgot Password", "ForgotPassword", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "" })
+        <br />
+            @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "" })
+    </div>
+
+    }
+}
+
+
+

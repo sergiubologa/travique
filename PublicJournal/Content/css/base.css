@@ -1,0 +1,235 @@
+﻿html {
+	overflow-y: scroll;
+}
+
+body {
+	background-image: url('../images/green.jpg');
+	background-repeat: repeat;
+	background-position: 0 0;
+}
+
+.darwin {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url('../images/darwin-single.png');
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	height: 450px;
+	width: 335px;
+	z-index: -50;
+}
+
+.pitech-logo img {
+	width: 410px;
+	padding-top: 38px;
+}
+
+.header {
+	background-image: url('../images/header-bg.png');
+	background-repeat: repeat-x;
+	background-position: 0 0;
+	height: 199px;
+	}
+	.main-navigation {
+		margin-top: 35px;
+	}
+	.custom {
+		background-color: transparent;
+		border-color: none;
+	}
+	.navbar-custom .navbar-nav > .active > a, .navbar-custom .navbar-nav > .active > a:hover, .navbar-custom .navbar-nav > .active > a:focus{
+		background-color: #080808;
+		color: #FFFFFF;
+	}
+	
+.navbar-nav a {
+		color: #ccc;
+	}
+
+.login-block {
+	background: url('../images/graybg.png') repeat 0 0 transparent;
+	padding: 30px 20px;
+	margin-top: 40px;
+    margin-left:10px;
+    position:fixed;
+}
+
+.inner-container {
+	background: #fff;
+	margin: 0px 0 0 0;
+	color: #333;
+}
+
+.inner-container table {
+	font: normal 11px/14px Arial;
+}
+.starter-template {
+	padding: 40px 15px;
+	text-align: center;
+}
+
+.navbar.navbar-inverse {
+    background: #222222;
+    border: 0px;
+}
+
+.select-md {
+    display: inline;
+    font: 11px/14px Arial;
+    height: 30px;
+    width: 175px;
+}
+
+.select-xs {
+    display: inline;
+    font: 11px/14px Arial;
+    height: 30px;
+    width: 70px;
+}
+
+.main-content {
+	margin: 50px 0 0 0;
+	padding: 0px;
+}
+
+.selecors-div {
+	margin: 15px 0;
+}
+
+.icon-flag,
+.icon-comments {
+	width: 20px;
+	height: 20px;
+	margin: 0px;
+	padding: 0px;
+	display: block;
+	float: left;
+}
+
+.icon-flag.flag-yellow {
+	background: url('../images/icon-flag-yellow.png') no-repeat 0 0 transparent;
+}
+
+.icon-flag.flag-blue {
+	background: url('../images/icon-flag-blue.png') no-repeat 0 0 transparent;
+}
+
+.icon-flag.flag-red {
+	background: url('../images/icon-flag-red.png') no-repeat 0 0 transparent;
+}
+
+.icon-flag.flag-green {
+	background: url('../images/icon-flag-green.png') no-repeat 0 0 transparent;
+}
+
+.icon-flag.flag-gray {
+	background: url('../images/icon-flag-gray.png') no-repeat 0 0 transparent;
+}
+
+.icon-flag.flag-orange {
+	background: url('../images/icon-flag-orange.png') no-repeat 0 0 transparent;
+}
+
+.icon-comments{
+	background: url('../images/icon-comments.png') no-repeat 0 0 transparent;
+}
+
+.btn-edit {
+	width: 20px;
+	height: 20px;
+	margin: 0px;
+	padding: 0px;
+	display: block;
+	float: left;
+	background: url('../images/icon-edit.png') no-repeat 0 0 transparent;
+}
+
+.actions a.btn-edit,
+.actions span.icon-flag,
+.actions span.icon-comments {
+	margin: 10px 5px;
+}
+
+.popover-content {
+	font-size: 11px;
+	padding: 8px;
+}
+
+.select-red {
+	background: red;
+}
+
+.select-yellow {
+	background: yellow;
+}
+
+.select-blue {
+	background: blue;
+}
+
+.select-green {
+	background: green;
+}
+
+.select-orange {
+	background: #ffa500;
+}
+
+.select-gray {
+	background: #999;
+}
+
+.login-page label {
+	color: #ccc;
+}
+
+.text-white {
+	color: #fff;
+}
+
+.user-details {
+	margin: 50px 0 0 0;
+}
+
+.spacer-10 {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.spacer-20 {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.nopadding-sides {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.top-border-2 {
+	border-top: 2px solid #ced7c4
+}
+
+.row-even-odd {
+	background: #e6ebe1;
+}
+
+.radios-inline {
+	padding: 15px 0 0 0;
+}
+
+.radios-inline input {
+	float: left;
+	margin: 2px 8px 0 0;
+}
+
+.radios-inline label {
+	font-weight: normal;
+}
+
+.demo-border {
+	border: 1px solid #333;
+}
