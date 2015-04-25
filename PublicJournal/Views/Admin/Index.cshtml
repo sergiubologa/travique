@@ -1,7 +1,47 @@
-﻿
+﻿@using PublicJournal.Models.Models
+@model List<RevenueModel>
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div style="height:200px;">
+    <table>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Event name
+            </th>
+            <th>
+                Start date
+            </th>
+            <th>
+                End date
+            </th>
+            <th>
+                Revenues
+            </th>
+        </tr>
+        @foreach (RevenueModel eventIdem in Model)
+        {
+            <td>
+                @eventIdem.EventId
+            </td>
+            <td>
+                @eventIdem.EventName
+            </td>
+            <td>
+                @eventIdem.StartDate
+            </td>
+            <td>
+                @eventIdem.EndDate
+            </td>
+            <td>
+                @eventIdem.Revenues
+            </td>    
+            
+        }
+    </table>
+</div>
 
