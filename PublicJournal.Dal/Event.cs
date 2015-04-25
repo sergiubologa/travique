@@ -34,6 +34,7 @@ namespace PublicJournal.Dal
         public int FlightId { get; set; }
         public int HotelId { get; set; }
     
+        public virtual GenericEvent GenericEvent { get; set; }
         public virtual ICollection<EventTestimonial> EventTestimonials { get; set; }
         public virtual ICollection<UserEventHistory> UserEventHistories { get; set; }
     }
