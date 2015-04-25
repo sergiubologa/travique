@@ -19,7 +19,7 @@ namespace PublicJournal.Models.Converter
             {
                 Id = category.Id,
                 Name = category.Name,
-                ImageName = category.Name,
+                ImageName = category.ImageName,
                 Description = category.Description
             };
             return categoryModel;
