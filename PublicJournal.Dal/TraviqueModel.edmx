@@ -153,6 +153,18 @@
           <Property Name="NoOfPersons" Type="int" Nullable="false" />
           <Property Name="Revenues" Type="decimal" Precision="18" Scale="2" Nullable="false" />
         </EntityType>
+        <Association Name="FK_Event_GenericEvent">
+          <End Role="GenericEvent" Type="Self.GenericEvent" Multiplicity="1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GenericEvent">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="GenericEventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_EventCategory_GenericEvent">
           <End Role="Category" Type="Self.Category" Multiplicity="1" />
           <End Role="EventCategory" Type="Self.EventCategory" Multiplicity="*" />
@@ -312,6 +324,10 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserEventHistory" EntityType="Self.UserEventHistory" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Event_GenericEvent" Association="Self.FK_Event_GenericEvent">
+            <End Role="GenericEvent" EntitySet="GenericEvent" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
           <AssociationSet Name="FK_EventCategory_GenericEvent" Association="Self.FK_EventCategory_GenericEvent">
             <End Role="Category" EntitySet="Category" />
             <End Role="EventCategory" EntitySet="EventCategory" />
@@ -387,6 +403,10 @@
           <AssociationSet Name="FK_GenericEvent_Country" Association="TraviqueModel.FK_GenericEvent_Country">
             <End Role="Country" EntitySet="Countries" />
             <End Role="GenericEvent" EntitySet="GenericEvents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Event_GenericEvent" Association="TraviqueModel.FK_Event_GenericEvent">
+            <End Role="GenericEvent" EntitySet="GenericEvents" />
+            <End Role="Event" EntitySet="Events" />
           </AssociationSet>
           <AssociationSet Name="FK_EventTestimonial_Event" Association="TraviqueModel.FK_EventTestimonial_Event">
             <End Role="Event" EntitySet="Events" />
@@ -464,6 +484,7 @@
           <Property Name="TicketPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="FlightId" Type="Int32" Nullable="false" />
           <Property Name="HotelId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="GenericEvent" Relationship="TraviqueModel.FK_Event_GenericEvent" FromRole="Event" ToRole="GenericEvent" />
           <NavigationProperty Name="EventTestimonials" Relationship="TraviqueModel.FK_EventTestimonial_Event" FromRole="Event" ToRole="EventTestimonial" />
           <NavigationProperty Name="UserEventHistories" Relationship="TraviqueModel.FK_UserEventHistory_UserEventHistory" FromRole="Event" ToRole="UserEventHistory" />
         </EntityType>
@@ -520,6 +541,7 @@
           <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CountryId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Country" Relationship="TraviqueModel.FK_GenericEvent_Country" FromRole="GenericEvent" ToRole="Country" />
+          <NavigationProperty Name="Events" Relationship="TraviqueModel.FK_Event_GenericEvent" FromRole="GenericEvent" ToRole="Event" />
           <NavigationProperty Name="EventCategories" Relationship="TraviqueModel.FK_EventCategory_GenericEvent1" FromRole="GenericEvent" ToRole="EventCategory" />
           <NavigationProperty Name="EventTestimonials" Relationship="TraviqueModel.FK_EventTestimonial_GenericEvent" FromRole="GenericEvent" ToRole="EventTestimonial" />
         </EntityType>
@@ -622,6 +644,18 @@
             </Principal>
             <Dependent Role="GenericEvent">
               <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Event_GenericEvent">
+          <End Type="TraviqueModel.GenericEvent" Role="GenericEvent" Multiplicity="1" />
+          <End Type="TraviqueModel.Event" Role="Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GenericEvent">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="GenericEventId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
