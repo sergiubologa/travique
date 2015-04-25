@@ -38,7 +38,7 @@ namespace PublicJournal.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = _iuserBus.GetOne(login);
+                var user = _iuserBus.Login(login);
 
                 if (login.WrongPassword == null && login.WrongUsername == null)
                 {

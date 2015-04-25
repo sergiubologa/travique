@@ -12,21 +12,10 @@ namespace PublicJournal.Dal
     using System;
     using System.Collections.Generic;
     
-    public partial class FlightInfo
+    public partial class Revenue
     {
-        public FlightInfo()
-        {
-            this.UserEventHistories = new HashSet<UserEventHistory>();
-        }
-    
         public int Id { get; set; }
-        public string FlightNo { get; set; }
-        public System.DateTime DepartureTime { get; set; }
-        public string DepartureAirport { get; set; }
-        public System.DateTime LandingTime { get; set; }
-        public string LandingAirport { get; set; }
-        public int TicketPrice { get; set; }
-    
-        public virtual ICollection<UserEventHistory> UserEventHistories { get; set; }
+        public int UserEventHistoryId { get; set; }
+        public int Revenue1 { get; set; }
     }
 }

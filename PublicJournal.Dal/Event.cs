@@ -17,6 +17,7 @@ namespace PublicJournal.Dal
         public Event()
         {
             this.EventTestimonials = new HashSet<EventTestimonial>();
+            this.UserEventHistories = new HashSet<UserEventHistory>();
         }
     
         public int Id { get; set; }
@@ -34,5 +35,6 @@ namespace PublicJournal.Dal
         public int HotelId { get; set; }
     
         public virtual ICollection<EventTestimonial> EventTestimonials { get; set; }
+        public virtual ICollection<UserEventHistory> UserEventHistories { get; set; }
     }
 }

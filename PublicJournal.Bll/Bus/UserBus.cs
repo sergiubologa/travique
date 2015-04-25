@@ -24,7 +24,7 @@ namespace PublicJournal.Bll.Bus
             _iUserDao = iUserDao;
         }
 
-        public UserModel GetOne(LoginModel login)
+        public UserModel Login(LoginModel login)
         {
             User user = _iUserDao.GetOne(login.Username);
 

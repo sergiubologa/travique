@@ -9,6 +9,6 @@ namespace PublicJournal.Bll.Contracts
 {
     public interface IUserBus
     {
-         UserModel GetOne(LoginModel name);
+         UserModel Login(LoginModel login);
     }
 }
