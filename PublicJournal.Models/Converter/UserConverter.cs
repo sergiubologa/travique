@@ -15,18 +15,22 @@ namespace PublicJournal.Models.Converter
     {
         public static UserModel ConvertToModel(User user, UserModel userModel)
         {
-          //  userModel.IdUser = user.IdUser;
-          //  userModel.Username = user.Username;
-          //  userModel.FirstName = user.FirstName;
-          //  userModel.LastName = user.LastName;
-          //  userModel.Password = user.Password;
-          //  userModel.Address = user.Address;
-          //  userModel.CreatedDate = user.CreatedDate;
-          // // userModel.Role.Description = user.UserRole.Description;
-          ////  userModel.Role.IdUserRole = user.UserRole.IdUserRole;
-          ////  userModel.Role.RoleName = user.UserRole.RoleName;
-          //  userModel.UpdatedByUser = user.UpdatedByUser;
-          //  userModel.UpdatedDate = user.UpdatedDate;
+            userModel.IdUser = user.Id;
+            userModel.Username = user.Username;
+            userModel.FirstName = user.Firstname;
+            userModel.LastName = user.Lastname;
+            userModel.Password = user.Password;
+            userModel.Address = String.Empty;
+            userModel.CreatedDate = user.DateCreated;
+            userModel.Role = new UserRoleModel()
+                {
+                    Description = user.Role.Description,
+                    IdUserRole = user.Role.Id,
+                    RoleName = user.Role.Name
+
+                };
+            //userModel.UpdatedByUser = user.UpdatedByUser;
+            //userModel.UpdatedDate = user.UpdatedDate;
             return userModel;
         }
 

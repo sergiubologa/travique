@@ -7,8 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace PublicJournal.Controllers
-{
-    //[Authorize(Roles = "2")]
+{   
     public class AdminController : Controller
     {
         private IUserBus _iuserBus;
@@ -23,6 +22,18 @@ namespace PublicJournal.Controllers
         }
         public ActionResult Index()
         {
+            if (Session["user"] == null)
+            {
+                return null;
+            }
+
+            UserModel user = (UserModel) Session["user"];
+
+            if (user.Role.IdUserRole == 1)
+            {
+                return null;
+            }
+
             List<RevenueModel> model = new List<RevenueModel>();
             model.Add(new RevenueModel()
             {
