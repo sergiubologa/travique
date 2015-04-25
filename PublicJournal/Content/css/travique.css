@@ -1,141 +1,199 @@
-﻿.top-buffer { margin-top:20px; }
-.navbar {
-    height:80px;
-    margin-bottom:0;
+﻿html, body {
+    font-family: 'PT Sans', Arial, sans-serif;
 }
+
+.top-buffer {
+    margin-top: 20px;
+}
+
+.navbar {
+    height: 80px;
+    margin-bottom: 0;
+}
+
 @media (min-width: 768px) {
     .navbar > .container-fluid .navbar-brand {
         margin-left: 50px;
     }
 }
+
 @media (min-width: 768px) {
     :last-child.navbar-right.navbar-nav {
-        margin-top:15px;
+        margin-top: 15px;
     }
 }
+
 @media (min-width: 768px) {
     .navbar-nav > li > span, .navbar-nav > li > img {
-        display:block;
+        display: block;
         padding-top: 15px;
         padding-bottom: 15px;
     }
 }
+
 .navbar-toggle {
-    margin-top:25px;
+    margin-top: 25px;
 }
 
-html,body{height:100%;}
-.carousel,.item,.active{height:100%;}
-.carousel-inner{height:100%; position:relative;}
-.fill{width:100%;height:100%;background-position:center;background-size:cover;padding:0;}
+html, body {
+    height: 100%;
+}
+
+.carousel, .item, .active {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+    position: relative;
+}
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    padding: 0;
+}
+
 .overlay {
-    position:absolute; width:100%; height:100%; background-color:black; opacity:0.3;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
 }
 /* keep full widget on smaller screens */
-@media (max-width: 767px) { 
-	body {
-		padding-left: 0;
-		padding-right: 0;
-	}
+@media (max-width: 767px) {
+    body {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
+
 .travique-carousel-indicators {
     background-color: #f00;
     z-index: 15;
     display: block;
 }
-.travique-carousel-indicators li {
-    display: inline-block;
-    cursor: pointer;
-}
-.travique-carousel-indicators li.selected {
-    position: relative;
-    background-color: #fff;
-}
-.travique-carousel-indicators li.selected:after {
-    bottom: 100%;
-    left: 50%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-    border-color: rgba(255, 255, 255, 0);
-    border-bottom-color: #ffffff;
-    border-width: 20px;
-    margin-left: -20px;
-}
+
+    .travique-carousel-indicators li {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+        .travique-carousel-indicators li.selected {
+            position: relative;
+            background-color: #fff;
+        }
+
+            .travique-carousel-indicators li.selected:after {
+                bottom: 100%;
+                left: 50%;
+                border: solid transparent;
+                content: " ";
+                height: 0;
+                width: 0;
+                position: absolute;
+                pointer-events: none;
+                border-color: rgba(255, 255, 255, 0);
+                border-bottom-color: #ffffff;
+                border-width: 20px;
+                margin-left: -20px;
+            }
+
 .travique-carousel-item {
     height: 700px;
 }
-.travique-carousel-item img {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-    height: 100%;
-}
-.travique-carousel-item h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 3em;
-    font-weight: 700;
-}
+
+    .travique-carousel-item img {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+    }
+
 .travique-carousel-caption {
     position: absolute;
     top: 30%;
 }
+
+    .travique-carousel-caption h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 4em;
+        font-weight: 700;
+    }
+
+    .travique-carousel-caption p {
+        font-size: 1.5em;
+        color: #cecece;
+    }
+
 #travique-carousel .travique-carousel-control-left, #travique-carousel .travique-carousel-control-right {
     position: absolute;
     top: 50%;
     background-image: none;
     vertical-align: middle;
 }
-#travique-carousel .travique-carousel-control-left:hover, #travique-carousel .travique-carousel-control-right:hover {
-    background-image: none;
-}
+
+    #travique-carousel .travique-carousel-control-left:hover, #travique-carousel .travique-carousel-control-right:hover {
+        background-image: none;
+    }
 
 .travique-main-category-box {
     height: 300px;
-    padding:30px 40px;
-    margin:0 20px 20px 0;
-    text-align:center;
-    color:#fff;
+    padding: 30px 40px;
+    margin: 0 20px 20px 0;
+    text-align: center;
+    color: #fff;
 }
+
     .travique-main-category-box:last-child {
-        margin-right:0;
+        margin-right: 0;
     }
-.travique-main-category-box.contemporary-music {
-    background-color:#8A4B7A;
-}
-.travique-main-category-box.electronic-music {
-    background-color:#019AE0;
-}
-.travique-main-category-box.food-drink {
-    background-color:#ED3B3F;
-}
-.travique-main-category-box.unusual {
-    background-color:#89BE36;
-}
+
+    .travique-main-category-box.contemporary-music {
+        background-color: #8A4B7A;
+    }
+
+    .travique-main-category-box.electronic-music {
+        background-color: #019AE0;
+    }
+
+    .travique-main-category-box.food-drink {
+        background-color: #ED3B3F;
+    }
+
+    .travique-main-category-box.unusual {
+        background-color: #89BE36;
+    }
+
 .travique-main-partner-box {
     height: 160px;
-    display:table-cell;
-    vertical-align:middle;
-    float:none;
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
 }
+
 .travique-footer {
-    padding:50px 100px;
+    padding: 50px 100px;
     background-color: #3c3d41;
 }
+
     .travique-footer div.border {
-        border-left:1px solid #9E9E9E;
+        border-left: 1px solid #9E9E9E;
     }
+
     .travique-footer h4 {
-        color:#fff;
+        color: #fff;
     }
+
     .travique-footer ul {
-        list-style:none;
-        padding:0;
+        list-style: none;
+        padding: 0;
     }
+
     .travique-footer > div > div {
-        min-height:150px;
-        padding:0 30px;
+        min-height: 150px;
+        padding: 0 30px;
     }
