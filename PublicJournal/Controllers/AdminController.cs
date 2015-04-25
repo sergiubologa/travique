@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace PublicJournal.Controllers
 {
-    [Authorize(Roles = "2")]
+    //[Authorize(Roles = "2")]
     public class AdminController : Controller
     {
         private IUserBus _iuserBus;
