@@ -88,7 +88,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="Converter\CategoryConverter.cs" />
+    <Compile Include="Converter\EventConverter.cs" />
     <Compile Include="Converter\UserConverter.cs" />
+    <Compile Include="Models\CategoryModel.cs" />
+    <Compile Include="Models\EventModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\RevenueModel.cs" />
     <Compile Include="Models\UserModel.cs" />

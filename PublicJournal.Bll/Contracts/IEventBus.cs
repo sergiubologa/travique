@@ -3,10 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PublicJournal.Models.Models;
 
 namespace PublicJournal.Bll.Contracts
 {
-    interface IEventBus
-    {
+    public interface IEventBus
+    {         
+         EventModel GetEvent(int id);
+         List<EventModel> GetListEventsByCategoryId(int categoryId);
+         List<EventModel> GetListEventsByCategoryIdAndByCountry(int categoryId, int countryId);
     }
 }
+
+
+ 

@@ -8,10 +8,9 @@ using System.Threading.Tasks;
 
 namespace PublicJournal.Dal.Contracts
 {
-    public interface IEventDao:IDao<Event>
+    public interface ICategoryDao:IDao<Category>
     {
-        Event GetEvent(int id);
-        List<Event> GetListEventsByCategoryId(int categoryId);
-        List<Event> GetListEventsByCategoryIdAndByCountry(int categoryId, int countryId);
+        Category GetCategory(int id);
+        List<Category> GetListCategories();        
     }
 }

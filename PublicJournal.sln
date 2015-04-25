@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicJournal", "PublicJournal\PublicJournal.csproj", "{2835FDBA-96BA-4D5C-850D-A909BB12F4E3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicJournal.Bll", "PublicJournal.Bll\PublicJournal.Bll.csproj", "{66A05BB5-3FFB-4BEC-B91F-DC7E39FD0EBB}"

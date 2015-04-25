@@ -17,36 +17,29 @@ namespace PublicJournal.Bll.Bus
     public class EventBus : IEventBus
     {
         private IEventDao _iEventDao;
-       // private UserModel userModel;
 
         public EventBus(IEventDao iEventDao)
         {
             _iEventDao = iEventDao;
         }
+                     
 
-        //public UserModel GetOne(LoginModel login)
-        //{
-        //    User user = _iUserDao.GetOne(login.Username);
+        public EventModel GetEvent(int id)
+        {
+            Event eventDB = _iEventDao.GetEvent(id);
+            return EventConverter.ConvertToModel(eventDB);
+        }
 
-        //    if (user != null)
-        //    {
-        //        if (user.Password == login.Password)
-        //        {
-        //            UserModel result = new UserModel();
-        //            UserConverter.ConvertToModel(user, result);
-        //            return result;
-        //        }
-        //        else
-        //        {
-        //            login.WrongPassword = "Password is incorrect!";
-        //            login.WrongPasswordCounter++;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        login.WrongUsername = "Username is incorrect";
-        //    }
-        //    return null;
-        //}
+        public List<EventModel> GetListEventsByCategoryId(int categoryId)
+        {
+            List<Event> listEventDB = _iEventDao.GetListEventsByCategoryId(categoryId);
+            return listEventDB.Select(x => EventConverter.ConvertToModel(x)).ToList();
+        }
+
+        public List<EventModel> GetListEventsByCategoryIdAndByCountry(int categoryId, int countryId)
+        {
+            List<Event> listEventDB = _iEventDao.GetListEventsByCategoryIdAndByCountry(categoryId, countryId);
+            return listEventDB.Select(x => EventConverter.ConvertToModel(x)).ToList();
+        }
     }
 }

@@ -12,10 +12,14 @@ namespace PublicJournal.Controllers
     public class AdminController : Controller
     {
         private IUserBus _iuserBus;
+        private IEventBus _iEventBus;
+        private ICategoryBus _iCategoryBus;
 
-        public AdminController(IUserBus _iuser)
+        public AdminController(IUserBus iUserBus, IEventBus iEventBus, ICategoryBus iCategoryBus)
         {
-            _iuserBus = _iuser;
+            _iuserBus = iUserBus;
+            _iEventBus = iEventBus;
+            _iCategoryBus = iCategoryBus;
         }
         public ActionResult Index()
         {
@@ -28,6 +32,9 @@ namespace PublicJournal.Controllers
                 StartDate = DateTime.Now.ToString("dd/MM/yyyy"),
                 EndDate = DateTime.Now.ToString("dd/MM/yyyy")
             });
+
+            List<CategoryModel> listCategories = _iCategoryBus.GetListCategories();
+
             
             return View("Index",model);
         }

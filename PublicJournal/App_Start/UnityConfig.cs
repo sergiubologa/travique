@@ -24,7 +24,11 @@ namespace PublicJournal
             container.RegisterType<IObjectContext, PublicJournalDataContext>(new HierarchicalLifetimeManager());
             container.RegisterType<IUserBus, UserBus>();
             container.RegisterType<IUserDao, UserDao>();
-            
+            container.RegisterType<IEventBus, EventBus>();
+            container.RegisterType<IEventDao, EventDao>();
+            container.RegisterType<ICategoryBus, CategoryBus>();
+            container.RegisterType<ICategoryDao, CategoryDao>();
+
             DependencyResolver.SetResolver(new Unity.Mvc5.UnityDependencyResolver(container));
         }
     }
