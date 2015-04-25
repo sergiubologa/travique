@@ -122,6 +122,9 @@
     <Compile Include="EventCategory.cs">
       <DependentUpon>TraviqueModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="EventRevenue.cs">
+      <DependentUpon>TraviqueModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="EventTestimonial.cs">
       <DependentUpon>TraviqueModel.tt</DependentUpon>
     </Compile>
@@ -136,6 +139,9 @@
     </Compile>
     <Compile Include="PublicJournalDataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Revenue.cs">
+      <DependentUpon>TraviqueModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Role.cs">
       <DependentUpon>TraviqueModel.tt</DependentUpon>
     </Compile>
@@ -155,6 +161,9 @@
       <DependentUpon>TraviqueModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
+      <DependentUpon>TraviqueModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserEventHistory.cs">
       <DependentUpon>TraviqueModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>

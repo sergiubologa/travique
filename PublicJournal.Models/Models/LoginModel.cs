@@ -12,7 +12,7 @@ namespace PublicJournal.Models.Models
         [ScaffoldColumn(false)]
         public int IdUser { get; set; }
 
-        [Required(ErrorMessage = "Please enter a Username")]
+        [Required(ErrorMessage = "Please enter a valid email address")]
         [RegularExpression("^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$", ErrorMessage = "Username must be a valid email")]
         public string Username { get; set; }
 

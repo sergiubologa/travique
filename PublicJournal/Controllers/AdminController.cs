@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace PublicJournal.Controllers
 {
-    [Authorize(Roles = "admin")]
+    [Authorize(Roles = "2")]
     public class AdminController : Controller
     {
         public ActionResult Index()

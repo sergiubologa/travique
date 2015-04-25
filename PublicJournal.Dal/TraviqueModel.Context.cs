@@ -29,11 +29,14 @@ namespace PublicJournal.Dal
         public virtual DbSet<Country> Countries { get; set; }
         public virtual DbSet<Event> Events { get; set; }
         public virtual DbSet<EventCategory> EventCategories { get; set; }
+        public virtual DbSet<EventRevenue> EventRevenues { get; set; }
         public virtual DbSet<EventTestimonial> EventTestimonials { get; set; }
         public virtual DbSet<FlightInfo> FlightInfoes { get; set; }
         public virtual DbSet<GenericEvent> GenericEvents { get; set; }
         public virtual DbSet<HotelInfo> HotelInfoes { get; set; }
+        public virtual DbSet<Revenue> Revenues { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<UserEventHistory> UserEventHistories { get; set; }
     }
 }

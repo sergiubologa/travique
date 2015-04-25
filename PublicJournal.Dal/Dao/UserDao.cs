@@ -20,10 +20,11 @@ namespace PublicJournal.Dal.Dao
         public User GetOne(string username)
         {
             var query = from obj in _objectSet 
-                        where obj.Username == username                        
+                        where obj.Email == username
                         select obj;           
-            return query.SingleOrDefault();
+            return query.FirstOrDefault();
         }
+
         //CITESTE CODING STANDARDS!!!!!!
     }
 }

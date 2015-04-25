@@ -14,6 +14,11 @@ namespace PublicJournal.Dal
     
     public partial class User
     {
+        public User()
+        {
+            this.UserEventHistories = new HashSet<UserEventHistory>();
+        }
+    
         public int Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
@@ -24,5 +29,6 @@ namespace PublicJournal.Dal
         public int RoleId { get; set; }
     
         public virtual Role Role { get; set; }
+        public virtual ICollection<UserEventHistory> UserEventHistories { get; set; }
     }
 }
