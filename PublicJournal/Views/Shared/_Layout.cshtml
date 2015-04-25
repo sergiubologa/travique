@@ -13,18 +13,11 @@
 </head>
 <body>
     @Html.Partial("_TopMenu")
+    @RenderBody()
     <div class="container">
-
-        <div class="body-content container fill">
-
-            @RenderBody()
-
-            <hr />
-            <footer class="row-even-odd">
-                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-            </footer>
-
-        </div>
+        <footer class="row-even-odd">
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
 
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/jqueryval")

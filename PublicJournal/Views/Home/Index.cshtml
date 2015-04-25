@@ -3,55 +3,62 @@
     ViewBag.Title = "Home Page";
 }
 
-<div id="travique-carousel" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner" role="listbox">
-        <div class="item text-center travique-carousel-item active">
-            <img src="@Url.Content("~/Content/images/festival1.jpg")" alt="...">
-            <div class="carousel-caption travique-carousel-caption">
-                <h2>ELECTRIC CASTLE FESTIVAL</h2>
-                <h3>June 25-28 2015, Cluj, Romania</h3>
-                <h3>Presale available until May 15</h3>
+<div class="container fill">
+    <div id="travique-carousel" class="carousel slide">
+        <div class="carousel-inner">
+            <div class="active item text-center">
+                <div class="fill" style="background-image: url('@Url.Content("~/Content/images/festival1.jpg")');">
+                    <div class="carousel-caption travique-carousel-caption">
+                        <h2>ELECTRIC CASTLE FESTIVAL</h2>
+                        <h3>June 25-28 2015, Cluj, Romania</h3>
+                        <h3>Presale available until May 15</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="item text-center">
+                <div class="fill" style="background-image: url('@Url.Content("~/Content/images/festival2.jpg")');">
+                    <div class="carousel-caption travique-carousel-caption">
+                        <h2>ELECTRIC CASTLE FESTIVAL</h2>
+                        <h3>June 25-28 2015, Cluj, Romania</h3>
+                        <h3>Presale available until May 15</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="item text-center">
+                <div class="fill" style="background-image: url('@Url.Content("~/Content/images/festival3.jpg")');">
+                    <div class="carousel-caption travique-carousel-caption">
+                        <h2>ELECTRIC CASTLE FESTIVAL</h2>
+                        <h3>June 25-28 2015, Cluj, Romania</h3>
+                        <h3>Presale available until May 15</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="item text-center">
+                <div class="fill" style="background-image: url('@Url.Content("~/Content/images/festival4.jpg")');">
+                    <div class="carousel-caption travique-carousel-caption">
+                        <h2>ELECTRIC CASTLE FESTIVAL</h2>
+                        <h3>June 25-28 2015, Cluj, Romania</h3>
+                        <h3>Presale available until May 15</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="item text-center">
+                <div class="fill" style="background-image: url('@Url.Content("~/Content/images/festival5.jpg")');">
+                    <div class="carousel-caption travique-carousel-caption">
+                        <h2>ELECTRIC CASTLE FESTIVAL</h2>
+                        <h3>June 25-28 2015, Cluj, Romania</h3>
+                        <h3>Presale available until May 15</h3>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="item text-center travique-carousel-item">
-            <img src="@Url.Content("~/Content/images/festival2.jpg")" alt="...">
-            <div class="carousel-caption travique-carousel-caption">
-                <h2>ELECTRIC CASTLE FESTIVAL</h2>
-                <h3>June 25-28 2015, Cluj, Romania</h3>
-                <h3>Presale available until May 15</h3>
-            </div>
-        </div>
-        <div class="item text-center travique-carousel-item">
-            <img src="@Url.Content("~/Content/images/festival3.jpg")" alt="...">
-            <div class="carousel-caption travique-carousel-caption">
-                <h2>ELECTRIC CASTLE FESTIVAL</h2>
-                <h3>June 25-28 2015, Cluj, Romania</h3>
-                <h3>Presale available until May 15</h3>
-            </div>
-        </div>
-        <div class="item text-center travique-carousel-item">
-            <img src="@Url.Content("~/Content/images/festival4.jpg")" alt="...">
-            <div class="carousel-caption travique-carousel-caption">
-                <h2>ELECTRIC CASTLE FESTIVAL</h2>
-                <h3>June 25-28 2015, Cluj, Romania</h3>
-                <h3>Presale available until May 15</h3>
-            </div>
-        </div>
-        <div class="item text-center travique-carousel-item">
-            <img src="@Url.Content("~/Content/images/festival5.jpg")" alt="...">
-            <div class="carousel-caption travique-carousel-caption">
-                <h2>ELECTRIC CASTLE FESTIVAL</h2>
-                <h3>June 25-28 2015, Cluj, Romania</h3>
-                <h3>Presale available until May 15</h3>
-            </div>
+        <div class="pull-center">
+            <a class="left carousel-control travique-carousel-control-left" href="#travique-carousel" data-slide="prev">
+                <img src="@Url.Content("~/Content/images/slider_arrow_left.png")" />
+            </a>
+            <a class="right carousel-control travique-carousel-control-right" href="#travique-carousel" data-slide="next">
+                <img src="@Url.Content("~/Content/images/slider_arrow_right.png")" />
+            </a>
         </div>
     </div>
-
-    <!-- Controls -->
-    <a class="left carousel-control travique-carousel-control-left" href="#travique-carousel" role="button" data-slide="prev">
-        <img src="@Url.Content("~/Content/images/slider_arrow_left.png")" />
-    </a>
-    <a class="right carousel-control travique-carousel-control-right" href="#travique-carousel" role="button" data-slide="next">
-        <img src="@Url.Content("~/Content/images/slider_arrow_right.png")" />
-    </a>
 </div>
