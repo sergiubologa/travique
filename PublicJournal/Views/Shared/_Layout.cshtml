@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Travique</title>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     @Styles.Render("~/bundles/css")
     @Scripts.Render("~/bundles/jquery")
     @Styles.Render("~/bundles/jqueryval")
@@ -13,7 +15,7 @@
     @Html.Partial("_TopMenu")
     <div class="container">
 
-        <div class="body-content container">
+        <div class="body-content container fill">
 
             @RenderBody()
 
