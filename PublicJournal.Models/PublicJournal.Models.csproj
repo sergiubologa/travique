@@ -90,6 +90,7 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Converter\UserConverter.cs" />
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\RevenueModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Models\UserRoleModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
