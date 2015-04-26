@@ -11,11 +11,9 @@
     @Styles.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
-    <div class="travique-wrapper menu-buffer">
-        @Html.Partial("_TopMenu")
-        @RenderBody()
-    </div>
+<body>    
+    @Html.Partial("_TopMenu")
+    @RenderBody()
     <footer class="container-fluid travique-footer ">
         <div class="row">
             <div class="col-sm-6 col-md-3 travique-footer-box text-left">
