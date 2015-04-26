@@ -54,6 +54,8 @@ namespace PublicJournal.Models.Converter
 
             eventModel.PackagePrice = eventModel.Hotel.PricePerNight + eventModel.Flight.TicketPrice + eventModel.EventPrice;
             eventModel.LongDescription = eventDB.LongDescription;
+            eventModel.NoOfNightsIncluded = eventDB.NumberOfNights;
+
 
             return eventModel;
         }
