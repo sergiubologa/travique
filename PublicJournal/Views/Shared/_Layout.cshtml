@@ -12,12 +12,14 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    @Html.Partial("_TopMenu")
-    @RenderBody()
-    <footer class="container-fluid travique-footer">
+    <div class="travique-wrapper menu-buffer">
+        @Html.Partial("_TopMenu")
+        @RenderBody()
+    </div>
+    <footer class="container-fluid travique-footer ">
         <div class="row">
             <div class="col-sm-6 col-md-3 travique-footer-box text-left">
-                <img src="@Url.Content("~/Content/images/logo.png")" />
+                <img src="@Url.Content("~/Content/images/logo_light.png")" />
             </div>
             <div class="col-sm-6 col-md-6 travique-footer-box text-center">
                 <ul class="travique-footer-keywords">
@@ -39,7 +41,7 @@
                 </ul>
             </div>
         </div>
-    </footer>    
+    </footer>  
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
