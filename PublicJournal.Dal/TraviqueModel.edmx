@@ -70,7 +70,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FlightNo" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="DepartureTime" Type="datetime" Nullable="false" />
           <Property Name="DepartureAirport" Type="nvarchar" MaxLength="200" Nullable="false" />
@@ -525,7 +525,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FlightNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DepartureTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="DepartureAirport" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
