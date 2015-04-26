@@ -16,7 +16,7 @@ h1 {
 }
 
 .menu-buffer {
-    margin-top: 80px;
+    padding-top:80px;
 }
 
 .btn {
@@ -307,4 +307,27 @@ div.event {
 }
         div.event p {
             margin-top:10px;
+}
+
+.travique-login {
+    padding: 50px;
+}
+.travique-login-inner {
+    width: 350px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+.travique-login-box h2 {
+    margin-top: 0;
+}
+.travique-login-inner .btn {
+    margin-top: 20px;
+}
+.travique-wrapper {
+    min-height: 100%;
+    height: auto;
+    padding-bottom: 80px;
+    margin-bottom: -80px;
 }

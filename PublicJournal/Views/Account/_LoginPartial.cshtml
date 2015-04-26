@@ -25,23 +25,33 @@
 }
 else
 {
-    using (Ajax.BeginForm("LogIn", "Account", null, new AjaxOptions { Url = Url.Content("/Account/Login"), InsertionMode = InsertionMode.Replace, UpdateTargetId = "login" }, new { id = "loginForm", @class = "login-block" }))
+    using (Ajax.BeginForm("LogIn", "Account", null, new AjaxOptions { Url = Url.Content("/Account/Login"), InsertionMode = InsertionMode.Replace, UpdateTargetId = "login" }, new { id = "loginForm", @class = "form-group login-block" }))
     {
-        @Html.Label("Username", htmlAttributes: new { @class = "text-white" })
+        //@Html.Label("Username", htmlAttributes: new { @class = "" })
         <p>@Html.ValidationMessageFor(m => m.Username)</p>
-        <p>@Html.TextBoxFor(m => m.Username)</p>
-        @Html.Label("Password", htmlAttributes: new { @class = "text-white" })
+        <div class="input-group">
+            <div class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></div>
+            @Html.TextBoxFor(m => m.Username, htmlAttributes: new { @class = "form-control ", placeholder = "Username" })
+        </div>
+        //@Html.Label("Password", htmlAttributes: new { @class = "" })
         <p>@Html.ValidationMessageFor(m => m.Password)</p>
-        <p>@Html.PasswordFor(m => m.Password)</p>
-
-        
-            <button type="submit" value="Log in" class="btn btn-default">Log In</button>
-    <hr />
-    <div>
-            @Html.ActionLink("Forgot Password", "ForgotPassword", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "" })
-        <br />
-            @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "" })
-    </div>
+        <div class="input-group">
+            <div class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></div>
+            @Html.PasswordFor(m => m.Password, htmlAttributes: new { @class = "form-control ", placeholder = "Password" })
+        </div>
+        <div class="text-center">
+            <button type="submit" value="Log in" class="btn btn-primary">Login</button>
+        </div>
+        <hr />
+        <div class="text-center">
+            <span>
+                @Html.ActionLink("Forgot Password", "ForgotPassword", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "" })
+            </span>
+            &nbsp;|&nbsp;
+            <span>
+                @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "" })
+            </span>
+        </div>
 
     }
 }
