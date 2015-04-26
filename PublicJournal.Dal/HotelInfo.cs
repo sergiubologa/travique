@@ -29,7 +29,7 @@ namespace PublicJournal.Dal
         public string City { get; set; }
         public int CountryId { get; set; }
         public string ContactEmail { get; set; }
-        public int ContactPhone { get; set; }
+        public string ContactPhone { get; set; }
     
         public virtual ICollection<UserEventHistory> UserEventHistories { get; set; }
     }

@@ -1,10 +1,12 @@
 ﻿html, body {
     font-family: 'PT Sans', Arial, sans-serif;
 }
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
 }
+
 h1 {
     font-size: 4em;
 }
@@ -12,6 +14,7 @@ h1 {
 .top-buffer {
     margin-top: 20px;
 }
+
 .menu-buffer {
     padding-top:80px;
 }
@@ -235,29 +238,34 @@ html, body {
 }
 
 .travique-footer {
-    padding-top:20px;
-    padding-bottom:20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     background-color: #3c3d41;
     color: #aaa;
 }
-.travique-footer h4 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1em;
-    color: #fff;
-}
-.travique-footer-box, .travique-footer-box .travique-logo  {
+
+    .travique-footer h4 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1em;
+        color: #fff;
+    }
+
+.travique-footer-box, .travique-footer-box .travique-logo {
     height: 40px;
 }
+
 .travique-footer ul {
     list-style-type: none;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
 }
-.travique-footer ul li {
-    display: inline-block;
-    margin-right: 10px;
-}
+
+    .travique-footer ul li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
 .travique-footer .travique-footer-keywords {
     color: #fff;
     font-family: 'Montserrat', sans-serif;
@@ -266,15 +274,40 @@ html, body {
 }
 
 div.events-header {
-    padding: 50px;    
+    padding: 50px;
 }
 
     div.events-header h1 {
-        color:#fff;
+        color: #fff;
     }
+
     div.events-header p {
-        color:#cecece;
+        color: #cecece;
     }
+
+div.event {
+}
+    div.event .image-container {
+        position: relative;
+    }
+
+        div.event .image-container img {
+            height: 200px;
+        }
+
+        div.event .image-container span {
+            position:absolute; color:#fff;
+            top:10px; left:20px;
+            text-transform:uppercase;
+            padding:2px 5px; display:block;
+        }
+        div.event h2 {
+            margin-top:10px;
+            margin-bottom:5px;
+}
+        div.event p {
+            margin-top:10px;
+}
 
 .travique-login {
     padding: 50px;

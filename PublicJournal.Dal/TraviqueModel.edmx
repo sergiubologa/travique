@@ -70,7 +70,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FlightNo" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="DepartureTime" Type="datetime" Nullable="false" />
           <Property Name="DepartureAirport" Type="nvarchar" MaxLength="200" Nullable="false" />
@@ -101,7 +101,7 @@
           <Property Name="City" Type="nvarchar(max)" Nullable="false" />
           <Property Name="CountryId" Type="int" Nullable="false" />
           <Property Name="ContactEmail" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="ContactPhone" Type="int" Nullable="false" />
+          <Property Name="ContactPhone" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="Revenue">
           <Key>
@@ -525,7 +525,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FlightNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DepartureTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="DepartureAirport" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
@@ -561,7 +561,7 @@
           <Property Name="City" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CountryId" Type="Int32" Nullable="false" />
           <Property Name="ContactEmail" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ContactPhone" Type="Int32" Nullable="false" />
+          <Property Name="ContactPhone" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="UserEventHistories" Relationship="TraviqueModel.FK_UserEventHistory_HotelInfo" FromRole="HotelInfo" ToRole="UserEventHistory" />
         </EntityType>
         <EntityType Name="Revenue">

@@ -9,13 +9,13 @@ namespace PublicJournal.Controllers
 {
     public class EventsController : Controller
     {
-        public ActionResult Index(string category)
+        public ActionResult Index(int id)
         {
             // Get list off all events from this category
 
             // Create the EventsModel and return it to the view
             EventsModel model = new EventsModel();
-            model.CategoryCssClass = category;
+            model.CategoryCssClass = "contemporary-music";
 
             return View(model);
         }

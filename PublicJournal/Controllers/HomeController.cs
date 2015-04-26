@@ -1,4 +1,5 @@
-﻿using PublicJournal.Models.Models;
+﻿using PublicJournal.Bll.Contracts;
+using PublicJournal.Models.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,14 @@ namespace PublicJournal.Controllers
 {
     public class HomeController : Controller
     {
+        private IUserBus _iUserBus;
+        private ICategoryBus _iCategoryBus;
+
+        public HomeController(IUserBus iUserBus, ICategoryBus iCategoryBus)
+        {
+            _iUserBus = iUserBus;
+            _iCategoryBus = iCategoryBus;
+        }
         private LoginModel loginModel;
 
         public HomeController(LoginModel login) 
@@ -18,7 +27,12 @@ namespace PublicJournal.Controllers
 
         public ActionResult Index()
         {
-            return View("Index", loginModel);
+            HomeViewModel model = new HomeViewModel()
+            {
+                ListCategories = new List<CategoryModel>(_iCategoryBus.GetListCategories())
+            };            
+
+            return View("Index", model);
         }
     }
 }
