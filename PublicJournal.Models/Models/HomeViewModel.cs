@@ -9,6 +9,7 @@ namespace PublicJournal.Models.Models
     public class HomeViewModel
     {
         public List<CategoryModel> ListCategories { get; set; }
+        public List<EventModel> ListEvents { get; set; }
 
     }
 }

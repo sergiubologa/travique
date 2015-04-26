@@ -17,10 +17,13 @@ namespace PublicJournal.Bll.Bus
     public class EventBus : IEventBus
     {
         private IEventDao _iEventDao;
+        private IUserEventHistoryDao _iUserEventHistoryDao;
 
-        public EventBus(IEventDao iEventDao)
+
+        public EventBus(IEventDao iEventDao, IUserEventHistoryDao iUserEventHistoryDao)
         {
             _iEventDao = iEventDao;
+            _iUserEventHistoryDao = iUserEventHistoryDao;
         }
                      
 
@@ -28,6 +31,12 @@ namespace PublicJournal.Bll.Bus
         {
             Event eventDB = _iEventDao.GetEvent(id);
             return EventConverter.ConvertToModel(eventDB);
+        }
+
+        public List<EventModel> GetAllEvents()
+        {
+            List<Event> listEvents = _iEventDao.GetAllEvents();
+            return new List<EventModel>(listEvents.Select(x=>EventConverter.ConvertToModel(x)));
         }
 
         public List<EventModel> GetListEventsByCategoryId(int categoryId)
@@ -39,6 +48,12 @@ namespace PublicJournal.Bll.Bus
         public List<EventModel> GetListEventsByCategoryIdAndByCountry(int categoryId, int countryId)
         {
             List<Event> listEventDB = _iEventDao.GetListEventsByCategoryIdAndByCountry(categoryId, countryId);
+            return listEventDB.Select(x => EventConverter.ConvertToModel(x)).ToList();
+        }
+
+        public List<RevenueModel> GetAllRevenues()
+        {
+            List<UserEventHistory> listEventDB = _iUserEventHistoryDao.GetAllRevenues();
             return listEventDB.Select(x => EventConverter.ConvertToModel(x)).ToList();
         }
     }

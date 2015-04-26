@@ -11,6 +11,7 @@ namespace PublicJournal.Dal.Contracts
     public interface IEventDao:IDao<Event>
     {
         Event GetEvent(int id);
+        List<Event> GetAllEvents();
         List<Event> GetListEventsByCategoryId(int categoryId);
         List<Event> GetListEventsByCategoryIdAndByCountry(int categoryId, int countryId);
     }

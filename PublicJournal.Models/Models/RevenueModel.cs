@@ -17,6 +17,10 @@ namespace PublicJournal.Models.Models
 
         public string EndDate { get; set; }
 
+        public int NoOfParticipants { get; set; }
+
         public decimal Revenues { get; set; }
+
+        public string Category { get; set; }
     }
 }

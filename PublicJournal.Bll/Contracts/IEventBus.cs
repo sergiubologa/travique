@@ -10,8 +10,10 @@ namespace PublicJournal.Bll.Contracts
     public interface IEventBus
     {         
          EventModel GetEvent(int id);
+         List<EventModel> GetAllEvents();
          List<EventModel> GetListEventsByCategoryId(int categoryId);
          List<EventModel> GetListEventsByCategoryIdAndByCountry(int categoryId, int countryId);
+         List<RevenueModel> GetAllRevenues();
     }
 }
 

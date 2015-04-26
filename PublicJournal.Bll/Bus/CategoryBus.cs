@@ -34,6 +34,5 @@ namespace PublicJournal.Bll.Bus
             List<Category> listCategories = _iCategoryDao.GetListCategories();
             return listCategories.Select(x => CategoryConverter.ConvertToModel(x)).ToList();
         }
-
     }
 }

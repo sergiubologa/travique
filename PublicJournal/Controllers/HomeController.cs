@@ -12,11 +12,13 @@ namespace PublicJournal.Controllers
     {
         private IUserBus _iUserBus;
         private ICategoryBus _iCategoryBus;
+        private IEventBus _iEventBus;
 
-        public HomeController(IUserBus iUserBus, ICategoryBus iCategoryBus)
+        public HomeController(IUserBus iUserBus, ICategoryBus iCategoryBus, IEventBus iEventBus)
         {
             _iUserBus = iUserBus;
             _iCategoryBus = iCategoryBus;
+            _iEventBus = iEventBus;
         }
         private LoginModel loginModel;
 
@@ -29,7 +31,8 @@ namespace PublicJournal.Controllers
         {
             HomeViewModel model = new HomeViewModel()
             {
-                ListCategories = new List<CategoryModel>(_iCategoryBus.GetListCategories())
+                ListCategories = new List<CategoryModel>(_iCategoryBus.GetListCategories()),
+                ListEvents = new List<EventModel>(_iEventBus.GetAllEvents())
             };            
 
             return View("Index", model);

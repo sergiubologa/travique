@@ -1,4 +1,15 @@
-﻿<nav class="navbar navbar-default navbar-fixed-top">
+﻿@using PublicJournal.Models.Models
+
+@{
+    UserModel userModel = null;
+    if (Session["user"] != null)
+    {
+
+        userModel = (UserModel)Session["user"];
+    }
+}
+    
+<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -14,12 +25,26 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li><img src="@Url.Content("~/Content/images/ic_user.png")" /></li>
-                <li><a href="@Url.Action("Login", "Account")">Login</a></li>
-                <li><span>&nbsp;|&nbsp;</span></li>
-                <li><a href="@Url.Action("Signup", "Account")">Signup</a></li>
-                <li><a href="http://www.facebook.com/travique"><img src="@Url.Content("~/Content/images/ic_facebook.png")" /></a></li>
-                <li><a href="http://www.twitter.com/travique"><img src="@Url.Content("~/Content/images/ic_twitter.png")" /></a></li>
-                <li><a href="http://www.instagram.com/travique"><img src="@Url.Content("~/Content/images/ic_instagram.png")" /></a></li>
+                @if (userModel == null)
+                {
+                    <li><a href="@Url.Action("Login", "Account")">Login</a></li>
+                    <li><span>&nbsp;|&nbsp;</span></li>
+                    <li><a href="@Url.Action("Signup", "Account")">Signup</a></li>
+                    <li><a href="http://www.facebook.com/travique"><img src="@Url.Content("~/Content/images/ic_facebook.png")" /></a></li>
+                    <li><a href="http://www.twitter.com/travique"><img src="@Url.Content("~/Content/images/ic_twitter.png")" /></a></li>
+                    <li><a href="http://www.instagram.com/travique"><img src="@Url.Content("~/Content/images/ic_instagram.png")" /></a></li>
+                } else
+                {
+                      <li><a href="@Url.Action("LogOff", "Account")">Welcome @userModel.FirstName </a></li>
+                      <li><a href="http://www.facebook.com/travique"><img src="@Url.Content("~/Content/images/ic_facebook.png")" /></a></li>
+                      <li><a href="http://www.twitter.com/travique"><img src="@Url.Content("~/Content/images/ic_twitter.png")" /></a></li>
+                      <li><a href="http://www.instagram.com/travique"><img src="@Url.Content("~/Content/images/ic_instagram.png")" /></a></li>
+                      if (userModel.Role.IdUserRole == 2)
+                       {                      
+                        <li><a href="/admin/index">Revenues</a></li>
+                       }                      
+                }
+                                
             </ul>
         </div>
     </div>

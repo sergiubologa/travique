@@ -4,44 +4,52 @@
     ViewBag.Title = "Index";
 }
 
-<div style="height:200px;">
-    <div>
-        <tr>
-            <th>
-                Id
-            </th>
-            <th>
-                Event name
-            </th>
-            <th>
-                Start date
-            </th>
-            <th>
-                End date
-            </th>
-            <th>
-                Revenues
-            </th>
-        </tr>
-        @foreach (RevenueModel eventIdem in Model)
-        {
-            <td>
-                @eventIdem.EventId
-            </td>
-            <td>
-                @eventIdem.EventName
-            </td>
-            <td>
-                @eventIdem.StartDate
-            </td>
-            <td>
-                @eventIdem.EndDate
-            </td>
-            <td>
-                @eventIdem.Revenues
-            </td>    
-            
-        }
-    </div>
-</div>
 
+<div class="container menu-buffer">
+   <h1> Revenues administration page</h1>
+  <table class="table table-bordered table-striped">
+   <thead>
+    <tr>
+     <th>Id</th>
+        <th>Event name</th>
+        <th>Start date</th>
+        <th>End date</th>
+        <th>Revenues</th>
+    </tr>
+   </thead>
+   <tbody>
+       @foreach(RevenueModel item in Model)
+       {
+           <tr>
+             <td>@item.EventId</td>
+             <td>@item.EventName</td>
+             <td>@item.StartDate</td>
+             <td>@item.EndDate</td>
+             <td>@item.NoOfParticipants</td>
+             <td>@item.Revenues</td>            
+          </tr>
+       }
+    @*<tr>
+     <td>123</td>
+     <td>Party</td>
+     <td>01.01.2015</td>
+     <td>01.01.2016</td>
+     <td>$ 43,00</td>
+    </tr>
+    <tr>
+     <td>123</td>
+     <td>Party</td>
+     <td>01.01.2015</td>
+     <td>01.01.2016</td>
+     <td>$ 43,00</td>
+    </tr>
+    <tr>
+     <td>123</td>
+     <td>Party</td>
+     <td>01.01.2015</td>
+     <td>01.01.2016</td>
+     <td>$ 43,00</td>
+    </tr>*@
+   </tbody>
+  </table>
+ </div>

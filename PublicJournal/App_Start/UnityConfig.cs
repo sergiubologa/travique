@@ -28,6 +28,8 @@ namespace PublicJournal
             container.RegisterType<IEventDao, EventDao>();
             container.RegisterType<ICategoryBus, CategoryBus>();
             container.RegisterType<ICategoryDao, CategoryDao>();
+            container.RegisterType<IUserEventHistoryDao, UserEventHistoryDao>();
+            
 
             DependencyResolver.SetResolver(new Unity.Mvc5.UnityDependencyResolver(container));
         }

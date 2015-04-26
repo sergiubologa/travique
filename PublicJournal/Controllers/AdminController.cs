@@ -34,20 +34,26 @@ namespace PublicJournal.Controllers
                 return null;
             }
 
-            List<RevenueModel> model = new List<RevenueModel>();
-            model.Add(new RevenueModel()
+            List<RevenueModel> listEventRevenues = new List<RevenueModel>();
+            List<RevenueModel> listRevenues = new List<RevenueModel>(_iEventBus.GetAllRevenues());
+
+            List<EventModel> listEvents = _iEventBus.GetAllEvents();
+            foreach (EventModel item in listEvents)
             {
-                EventId = 1,
-                EventName = "EventTest",
-                Revenues=10,
-                StartDate = DateTime.Now.ToString("dd/MM/yyyy"),
-                EndDate = DateTime.Now.ToString("dd/MM/yyyy")
-            });
+                RevenueModel itemRevenu = new RevenueModel()
+                {
+                    EventId = item.EventId,
+                    Revenues = listRevenues.Where(x => x.EventId == item.EventId).Sum(y => y.Revenues),
+                    StartDate = item.StartDate,
+                    EndDate = item.EndDate,
+                    NoOfParticipants = listRevenues.Where(x => x.EventId == item.EventId).Sum(y => y.NoOfParticipants),
+                    EventName = item.EventName,
+                    Category = item.Category.Name
+                };
+                listEventRevenues.Add(itemRevenu);
+            }
 
-            List<CategoryModel> listCategories = _iCategoryBus.GetListCategories();
-
-            
-            return View("Index",model);
+            return View("Index", listEventRevenues);
         }
     }
 }

@@ -113,6 +113,7 @@
     <Compile Include="Contracts\IEventDao.cs" />
     <Compile Include="Contracts\IObjectContext.cs" />
     <Compile Include="Contracts\IUserDao.cs" />
+    <Compile Include="Contracts\IUserEventHistoryDao.cs" />
     <Compile Include="Country.cs">
       <DependentUpon>TraviqueModel.tt</DependentUpon>
     </Compile>
@@ -120,6 +121,7 @@
     <Compile Include="Dao\CategoryDao.cs" />
     <Compile Include="Dao\EventDao.cs" />
     <Compile Include="Dao\UserDao.cs" />
+    <Compile Include="Dao\UserEventHistoryDao.cs" />
     <Compile Include="Event.cs">
       <DependentUpon>TraviqueModel.tt</DependentUpon>
     </Compile>

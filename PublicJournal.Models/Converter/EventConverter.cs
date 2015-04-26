@@ -33,6 +33,20 @@ namespace PublicJournal.Models.Converter
             return eventModel;
         }
 
+        public static RevenueModel ConvertToModel(UserEventHistory revenue)
+        {
+            RevenueModel revenueModel = new RevenueModel();
+
+            revenueModel.EventId = revenue.Event.Id;
+            revenueModel.EndDate = revenue.Event.EndDate.ToString("dd-MM-yyyy");
+            revenueModel.StartDate = revenue.Event.StartDate.ToString("dd-MM-yyyy");
+            revenueModel.EventName = revenue.Event.Name;
+            revenueModel.Revenues = revenue.Revenues;
+            revenueModel.NoOfParticipants = revenue.NoOfPersons;
+
+            return revenueModel;
+        }
+
         public static User ConvertToUser(User user, UserModel userModel)
         {
        //     user.IdUser = userModel.IdUser;

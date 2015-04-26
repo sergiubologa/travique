@@ -71,7 +71,8 @@ namespace PublicJournal.Controllers
         {
             Session.Abandon();
             Session["user"] = null;
-            return PartialView("_LoginPartial");
+
+            return RedirectToAction("Index", "Home");
         }
     }
 }

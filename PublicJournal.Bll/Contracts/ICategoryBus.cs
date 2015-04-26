@@ -10,7 +10,7 @@ namespace PublicJournal.Bll.Contracts
     public interface ICategoryBus
     {
         CategoryModel GetCategory(int id);
-        List<CategoryModel> GetListCategories();       
+        List<CategoryModel> GetListCategories();
     }
 }
 

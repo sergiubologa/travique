@@ -25,6 +25,14 @@ namespace PublicJournal.Dal.Dao
             return query.SingleOrDefault();
         }
 
+
+        public List<Event> GetAllEvents()
+        {
+            var query = from obj in _objectSet                                               
+                        select obj;           
+            return query.ToList();
+        }
+
         public List<Event> GetListEventsByCategoryId(int categoryId)
         {
             var query = from obj in _objectSet
