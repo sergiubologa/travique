@@ -51,7 +51,7 @@ namespace PublicJournal.Controllers
             UserModel user = (UserModel) Session["user"];
 
             bool revenueSaved = _iEventBus.SaveRevenue(user.IdUser, id);
-            return View(model);
+            return View("ThankYou");
         }
 	}
 }
