@@ -230,6 +230,18 @@ html, body {
 .unusual {
     background-color: #89BE36;
 }
+.traditional {
+    background-color:#ED844E;
+}
+.art {
+    background-color:#ED165A;
+}
+.military {
+    background-color:#175F8F;
+}
+.films {
+    background-color:#9B239E;
+}
 
 .travique-main-partner-box {
     height: 160px;
