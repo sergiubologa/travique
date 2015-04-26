@@ -33,6 +33,7 @@ namespace PublicJournal.Dal
         public decimal TicketPrice { get; set; }
         public int FlightId { get; set; }
         public int HotelId { get; set; }
+        public int NumberOfNights { get; set; }
     
         public virtual FlightInfo FlightInfo { get; set; }
         public virtual GenericEvent GenericEvent { get; set; }

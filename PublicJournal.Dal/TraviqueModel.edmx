@@ -39,6 +39,7 @@
           <Property Name="TicketPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="FlightId" Type="int" Nullable="false" />
           <Property Name="HotelId" Type="int" Nullable="false" />
+          <Property Name="NumberOfNights" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="EventCategory">
           <Key>
@@ -526,6 +527,7 @@
           <Property Name="TicketPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="FlightId" Type="Int32" Nullable="false" />
           <Property Name="HotelId" Type="Int32" Nullable="false" />
+          <Property Name="NumberOfNights" Type="Int32" Nullable="false" />
           <NavigationProperty Name="FlightInfo" Relationship="TraviqueModel.FK_Event_FlightInfo" FromRole="Event" ToRole="FlightInfo" />
           <NavigationProperty Name="GenericEvent" Relationship="TraviqueModel.FK_Event_GenericEvent" FromRole="Event" ToRole="GenericEvent" />
           <NavigationProperty Name="HotelInfo" Relationship="TraviqueModel.FK_Event_HotelInfo" FromRole="Event" ToRole="HotelInfo" />
@@ -877,6 +879,7 @@
           <EntitySetMapping Name="Events">
             <EntityTypeMapping TypeName="TraviqueModel.Event">
               <MappingFragment StoreEntitySet="Event">
+                <ScalarProperty Name="NumberOfNights" ColumnName="NumberOfNights" />
                 <ScalarProperty Name="HotelId" ColumnName="HotelId" />
                 <ScalarProperty Name="FlightId" ColumnName="FlightId" />
                 <ScalarProperty Name="TicketPrice" ColumnName="TicketPrice" />
