@@ -238,9 +238,13 @@
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\travique.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\images\-old.jpg" />
     <Content Include="Content\images\darwin-single.png" />
     <Content Include="Content\images\festival1.jpg" />
     <Content Include="Content\images\festival2.jpg" />
+    <Content Include="Content\images\festival3.jpg" />
+    <Content Include="Content\images\festival4.jpg" />
+    <Content Include="Content\images\festival5.jpg" />
     <Content Include="Content\images\graybg.png" />
     <Content Include="Content\images\green.jpg" />
     <Content Include="Content\images\header-bg.png" />
