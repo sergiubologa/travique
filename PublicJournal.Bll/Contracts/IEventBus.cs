@@ -14,6 +14,7 @@ namespace PublicJournal.Bll.Contracts
          List<EventModel> GetListEventsByCategoryId(int categoryId);
          List<EventModel> GetListEventsByCategoryIdAndByCountry(int categoryId, int countryId);
          List<RevenueModel> GetAllRevenues();
+         bool SaveRevenue(int userId, int eventId);
     }
 }
 

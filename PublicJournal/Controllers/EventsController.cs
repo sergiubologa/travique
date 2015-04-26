@@ -39,7 +39,7 @@ namespace PublicJournal.Controllers
             return View(model);
         }
 
-        public ActionResult Event(int id)
+        public ActionResult Book(int id)
         {           
             if (Session["user"] == null)
             {
