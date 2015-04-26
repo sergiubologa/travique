@@ -9,12 +9,12 @@
         <EntityTypeShape EntityType="TraviqueModel.Country" Width="1.5" PointX="1.5" PointY="11.25" />
         <EntityTypeShape EntityType="TraviqueModel.Event" Width="1.5" PointX="3" PointY="4.5" />
         <EntityTypeShape EntityType="TraviqueModel.EventCategory" Width="1.5" PointX="3" PointY="0.75" />
-        <EntityTypeShape EntityType="TraviqueModel.EventRevenue" Width="1.5" PointX="7.5" PointY="2.75" />
+        <EntityTypeShape EntityType="TraviqueModel.EventRevenue" Width="1.5" PointX="7.5" PointY="9.25" />
         <EntityTypeShape EntityType="TraviqueModel.EventTestimonial" Width="1.5" PointX="8.25" PointY="5.75" />
         <EntityTypeShape EntityType="TraviqueModel.FlightInfo" Width="1.5" PointX="0.75" PointY="5.5" />
         <EntityTypeShape EntityType="TraviqueModel.GenericEvent" Width="1.5" PointX="0.75" PointY="1.5" />
         <EntityTypeShape EntityType="TraviqueModel.HotelInfo" Width="1.5" PointX="0.75" PointY="14.75" />
-        <EntityTypeShape EntityType="TraviqueModel.Revenue" Width="1.5" PointX="7.5" PointY="9.25" />
+        <EntityTypeShape EntityType="TraviqueModel.Revenue" Width="1.5" PointX="7.5" PointY="2.75" />
         <EntityTypeShape EntityType="TraviqueModel.Role" Width="1.5" PointX="0.75" PointY="20" />
         <EntityTypeShape EntityType="TraviqueModel.sysdiagram" Width="1.5" PointX="3.75" PointY="10.75" />
         <EntityTypeShape EntityType="TraviqueModel.User" Width="1.5" PointX="3" PointY="19.375" />

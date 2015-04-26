@@ -26,7 +26,7 @@ namespace PublicJournal.Dal
         public string DepartureAirport { get; set; }
         public System.DateTime LandingTime { get; set; }
         public string LandingAirport { get; set; }
-        public int TicketPrice { get; set; }
+        public decimal TicketPrice { get; set; }
     
         public virtual ICollection<Event> Events { get; set; }
         public virtual ICollection<UserEventHistory> UserEventHistories { get; set; }
