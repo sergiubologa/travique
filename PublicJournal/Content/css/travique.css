@@ -1,6 +1,6 @@
 ﻿html, body {
     font-family: 'PT Sans', Arial, sans-serif;
-    background-color:#f7f7f7;
+    background-color: #f7f7f7;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -17,7 +17,7 @@ h1 {
 }
 
 .menu-buffer {
-    margin-top:80px;
+    margin-top: 80px;
 }
 
 .btn {
@@ -67,6 +67,18 @@ h1 {
     border-color: #b9b9b9;
     color: #b9b9b9;
     box-shadow: none;
+}
+
+travique-main-category-box {
+    padding: 30px 40px 90px;
+}
+
+.btn-bottom {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    width: 150px;
+    margin-left: -75px;
 }
 
 .navbar {
@@ -230,17 +242,21 @@ html, body {
 .unusual {
     background-color: #89BE36;
 }
+
 .traditional {
-    background-color:#ED844E;
+    background-color: #ED844E;
 }
+
 .art {
-    background-color:#ED165A;
+    background-color: #ED165A;
 }
+
 .military {
-    background-color:#175F8F;
+    background-color: #175F8F;
 }
+
 .films {
-    background-color:#9B239E;
+    background-color: #9B239E;
 }
 
 .travique-main-partner-box {
@@ -299,8 +315,9 @@ div.events-header {
     }
 
 div.event {
-    margin-bottom:30px;
+    margin-bottom: 30px;
 }
+
     div.event .image-container {
         position: relative;
     }
@@ -310,46 +327,60 @@ div.event {
         }
 
         div.event .image-container span {
-            position:absolute; color:#fff;
-            top:10px; left:20px;
-            text-transform:uppercase;
-            padding:2px 5px; display:block;
+            position: absolute;
+            color: #fff;
+            top: 10px;
+            left: 20px;
+            text-transform: uppercase;
+            padding: 2px 5px;
+            display: block;
         }
-        div.event h2 {
-            margin-top:10px;
-            margin-bottom:5px;
-}
-        div.event p {
-            margin-top:10px;
-}
+
+    div.event h2 {
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+
+    div.event p {
+        margin-top: 10px;
+    }
 
 div.filter-box {
-    border:1px solid #eee;
-    background-color:#fff;
-    margin-bottom:20px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    margin-bottom: 20px;
 }
+
     div.filter-box h2 {
         margin: 10px;
         padding-bottom: 5px;
         font-size: 1em;
         text-transform: uppercase;
     }
+
     div.filter-box ul li {
-        padding:0; margin:0;
+        padding: 0;
+        margin: 0;
     }
+
     div.filter-box a {
-        color:#000; font-weight:bold;
-        text-transform:uppercase;
+        color: #000;
+        font-weight: bold;
+        text-transform: uppercase;
     }
+
     div.filter-box ul li a.category {
-        color:#fff;
+        color: #fff;
     }
-    div.filter-box ul li a.category:hover {
-        color:#000;
-    }
+
+        div.filter-box ul li a.category:hover {
+            color: #000;
+        }
+
 .travique-login {
     padding: 50px;
 }
+
 .travique-login-inner {
     width: 350px;
     margin: 0 auto;
@@ -357,15 +388,62 @@ div.filter-box {
     border: 1px solid #ccc;
     border-radius: 10px;
 }
+
 .travique-login-box h2 {
     margin-top: 0;
 }
+
 .travique-login-inner .btn {
     margin-top: 20px;
 }
+
 .travique-wrapper {
     min-height: 100%;
     height: auto;
     padding-bottom: 80px;
     margin-bottom: -80px;
 }
+
+.event-page-header {
+    height: 40%;
+    min-height: 300px;
+    color:#fff; position:relative;
+}
+    .event-page-header div.overlay {
+        opacity:0.7;
+    }
+    .event-page-header h1, .event-page-header h2, .event-page-header span {
+        
+    }
+
+.price-box {
+    background-color:#8DC73F;
+    padding:20px 30px;
+    color:#fff;
+    border-bottom-left-radius:0;
+    border-bottom-right-radius:0;
+}
+.price-details-box {
+    border-top-left-radius:0;
+    border-top-right-radius:0;
+}
+.details {
+    border-bottom:1px solid #dcdcdc;
+    padding:10px 0; margin:0;
+}
+.details span.glyphicon {
+    font-size:36px;
+}
+.details p {
+    font-weight:bold;
+    margin:0; text-transform:uppercase;
+}
+.book-now-container {
+    padding:10px 0;
+}
+    .book-now-container a {
+        font-family: 'Montserrat', sans-serif;
+        border:none;
+        color: #fff !important;
+        background-color:#8DC73F !important;
+    }

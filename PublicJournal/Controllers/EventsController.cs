@@ -31,5 +31,10 @@ namespace PublicJournal.Controllers
 
             return View(model);
         }
+
+        public ActionResult Event(int id)
+        {
+            return View();
+        }
 	}
 }
