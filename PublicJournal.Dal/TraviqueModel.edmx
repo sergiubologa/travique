@@ -101,7 +101,7 @@
           <Property Name="City" Type="nvarchar(max)" Nullable="false" />
           <Property Name="CountryId" Type="int" Nullable="false" />
           <Property Name="ContactEmail" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="ContactPhone" Type="int" Nullable="false" />
+          <Property Name="ContactPhone" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="Revenue">
           <Key>
@@ -561,7 +561,7 @@
           <Property Name="City" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CountryId" Type="Int32" Nullable="false" />
           <Property Name="ContactEmail" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ContactPhone" Type="Int32" Nullable="false" />
+          <Property Name="ContactPhone" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="UserEventHistories" Relationship="TraviqueModel.FK_UserEventHistory_HotelInfo" FromRole="HotelInfo" ToRole="UserEventHistory" />
         </EntityType>
         <EntityType Name="Revenue">
