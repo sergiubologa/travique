@@ -44,7 +44,7 @@ namespace PublicJournal.Controllers
                 if (login.WrongPassword == null && login.WrongUsername == null)
                 {
                     Session.Add("user", user);
-                    return RedirectToAction("Index", "Home");
+                    return Json(true);
                 }
                 else
                 {

@@ -25,7 +25,7 @@
 }
 else
 {
-    using (Ajax.BeginForm("LogIn", "Account", null, new AjaxOptions { Url = Url.Content("/Account/Login"), InsertionMode = InsertionMode.Replace, UpdateTargetId = "login" }, new { id = "loginForm", @class = "form-group login-block" }))
+    using (Ajax.BeginForm("LogIn", "Account", null, new AjaxOptions { Url = Url.Content("/Account/Login"), InsertionMode = InsertionMode.Replace, OnSuccess = "success" }, new { id = "loginForm", @class = "form-group login-block" }))
     {
         //@Html.Label("Username", htmlAttributes: new { @class = "" })
         <p>@Html.ValidationMessageFor(m => m.Username)</p>
