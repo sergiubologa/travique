@@ -17,7 +17,7 @@ h1 {
 }
 
 .menu-buffer {
-    padding-top:80px;
+    margin-top:80px;
 }
 
 .btn {
@@ -314,15 +314,26 @@ div.event {
 div.filter-box {
     border:1px solid #eee;
     background-color:#fff;
-    padding:10px;
     margin-bottom:20px;
 }
     div.filter-box h2 {
-        margin: 0;
-        border-bottom: 1px solid #dcdcdc;
+        margin: 10px;
         padding-bottom: 5px;
-        font-size: 1.5em;
+        font-size: 1em;
         text-transform: uppercase;
+    }
+    div.filter-box ul li {
+        padding:0; margin:0;
+    }
+    div.filter-box a {
+        color:#000; font-weight:bold;
+        text-transform:uppercase;
+    }
+    div.filter-box ul li a.category {
+        color:#fff;
+    }
+    div.filter-box ul li a.category:hover {
+        color:#000;
     }
 .travique-login {
     padding: 50px;
