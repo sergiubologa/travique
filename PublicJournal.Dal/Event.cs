@@ -34,6 +34,7 @@ namespace PublicJournal.Dal
         public int FlightId { get; set; }
         public int HotelId { get; set; }
         public int NumberOfNights { get; set; }
+        public string LongDescription { get; set; }
     
         public virtual FlightInfo FlightInfo { get; set; }
         public virtual GenericEvent GenericEvent { get; set; }
