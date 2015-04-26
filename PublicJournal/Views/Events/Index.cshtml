@@ -42,7 +42,7 @@
                 {
                 <div class="col-md-4 event">
                     <div class="image-container">
-                        <a href="@Url.Action("Event", "Events", new { id = 1 })"><img class="img-responsive" src="@Url.Content("~/Content/images/" + item.ImageName + ".jpg")" /></a>
+                        <a href="@Url.Action("Event", "Events", new { id = item.EventId })"><img class="img-responsive" src="@Url.Content("~/Content/images/" + item.ImageName + ".jpg")" /></a>
                         <span class="@item.Category.ImageName category" > @item.Category.Name</span>
                     </div>
                     <h2>@item.EventName</h2>

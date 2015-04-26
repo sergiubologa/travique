@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
@@ -26,7 +23,7 @@ namespace PublicJournal.Models.Models
 
         public CategoryModel Category { get; set; }
 
-        public int PackagePrice { get; set; }
+        public decimal PackagePrice { get; set; }
 
         public FlightModel Flight { get; set; }
 
@@ -35,6 +32,8 @@ namespace PublicJournal.Models.Models
         public string City { get; set; }
 
         public string Country { get; set; }
+
+        public decimal EventPrice { get; set; }
 
     }
 }
