@@ -1,4 +1,6 @@
-﻿@model PublicJournal.Models.Models.EventsModel
+﻿@using PublicJournal.Models.Models
+
+@model PublicJournal.Models.Models.EventsModel
 @{
     ViewBag.Title = "Index";
 }
@@ -34,16 +36,19 @@
         </div>
         <div class="col-md-9">
             <div class="row">
+                @foreach(EventModel item in Model.ListEvents)
+                {
                 <div class="col-md-4 event">
                     <div class="image-container">
-                        <a href="@Url.Action("Event", "Events", new { id = 1 })"><img class="img-responsive" src="@Url.Content("~/Content/images/festival1.jpg")" /></a>
-                        <span class="electronic-music category" >Electronic Music</span>
+                        <a href="@Url.Action("Event", "Events", new { id = 1 })"><img class="img-responsive" src="@Url.Content("~/Content/images/" + item.ImageName + ".jpg")" /></a>
+                        <span class="@item.Category.ImageName category" > @item.Category.Name</span>
                     </div>
-                    <h2>Untold Festival</h2>
-                    <strong>30.07 - 02.08 2015</strong>
-                    <p>A short description of the event so the user can have an idea what is all about...</p>
+                    <h2>@item.EventName</h2>
+                    <strong>@item.StartDate - @item.EndDate</strong>
+                    <p>@item.Description</p>
                 </div>
-                <div class="col-md-4 event">
+                }
+                @*<div class="col-md-4 event">
                     <div class="image-container">
                         <a href="@Url.Action("Event", "Events", new { id = 1 })"><img class="img-responsive" src="@Url.Content("~/Content/images/festival2.jpg")" /></a>
                         <span class="contemporary-music category">Electronic Music</span>
@@ -87,7 +92,7 @@
                     <h2>Untold Festival</h2>
                     <strong>30.07 - 02.08 2015</strong>
                     <p>A short description of the event so the user can have an idea what is all about...</p>
-                </div>
+                </div>*@
             </div>            
         </div>
     </div>

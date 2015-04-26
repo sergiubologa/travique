@@ -8,8 +8,10 @@ namespace PublicJournal.Models.Models
 {
     public class EventsModel
     {
+        public List<EventModel> ListEvents { get; set; }
+
         public string CategoryCssClass { get; set; }
-        public string SelectedCategoryName { get; set; }
-        public string Description { get; set; }
+        //public string SelectedCategoryName { get; set; }
+        //public string Description { get; set; }
     }
 }

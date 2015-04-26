@@ -16,9 +16,13 @@ namespace PublicJournal.Models.Models
 
         public string EventName { get; set; }
 
+        public string Description { get; set; }
+
         public string StartDate { get; set; }
 
         public string EndDate { get; set; }
+
+        public string ImageName { get; set; }
 
         public CategoryModel Category { get; set; }
     }

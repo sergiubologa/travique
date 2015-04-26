@@ -21,6 +21,7 @@ namespace PublicJournal.Models.Converter
                 EndDate = eventDB.EndDate.ToString("dd/MM/yyyy"),
                 StartDate = eventDB.StartDate.ToString("dd/MM/yyyy"),
                 EventName = eventDB.Name,
+                ImageName = eventDB.ImageName,
                 Category = new CategoryModel()
                 {
                     Id = int.Parse(eventDB.GenericEvent.EventCategories.ToList().Select(x => new { x.CategoryId }).FirstOrDefault().ToString()),
