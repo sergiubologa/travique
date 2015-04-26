@@ -60,13 +60,19 @@ namespace PublicJournal.Bll.Bus
         public bool SaveRevenue(int userId, int eventId)
         {
             Event eventDb = _iEventDao.GetEvent(eventId);
-            eventDb.UserEventHistories.Add(new UserEventHistory()
+            UserEventHistory userHistory = new UserEventHistory()
             {
                 EventId = eventId,
                 UserId = userId,
-                NoOfPersons = 1,
-                Revenues = (eventDb.TicketPrice + eventDb.FlightInfo.TicketPrice + eventDb.HotelInfo.RoomPrice * eventDb.HotelInfo.RoomPrice) / 10
-            });            
+                NoOfPersons = 1,               
+                FlightId = eventDb.FlightId,
+                HotelId = eventDb.HotelId
+            };
+
+            userHistory.Revenues = (decimal)((eventDb.TicketPrice + eventDb.FlightInfo.TicketPrice + eventDb.HotelInfo.RoomPrice * eventDb.NumberOfNights) / 10);
+            eventDb.UserEventHistories.Add(userHistory);
+
+            _iEventDao.SaveContext();
 
             return true;
         }
