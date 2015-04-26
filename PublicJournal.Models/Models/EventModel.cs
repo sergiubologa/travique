@@ -25,5 +25,16 @@ namespace PublicJournal.Models.Models
         public string ImageName { get; set; }
 
         public CategoryModel Category { get; set; }
+
+        public int PackagePrice { get; set; }
+
+        public FlightModel Flight { get; set; }
+
+        public HotelModel Hotel { get; set; }
+
+        public string City { get; set; }
+
+        public string Country { get; set; }
+
     }
 }

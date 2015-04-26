@@ -54,7 +54,7 @@ namespace PublicJournal.Bll.Bus
         public List<RevenueModel> GetAllRevenues()
         {
             List<UserEventHistory> listEventDB = _iUserEventHistoryDao.GetAllRevenues();
-            return listEventDB.Select(x => EventConverter.ConvertToModel(x)).ToList();
+            return listEventDB.Select(x => EventConverter.ConvertToRevenueModel(x)).ToList();
         }
     }
 }

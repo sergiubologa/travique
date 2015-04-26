@@ -22,18 +22,23 @@ namespace PublicJournal.Models.Converter
             eventModel.StartDate = eventDB.StartDate.ToString("dd-MM-yyyy");
             eventModel.EventName = eventDB.Name;
             eventModel.ImageName = eventDB.ImageName;
-            eventModel.Description = eventDB.Description;
-            
+            eventModel.Description = eventDB.Description;            
+
             eventModel.Category = new CategoryModel()
             {
                 Id = int.Parse(eventDB.GenericEvent.EventCategories.ToList().Select(x => x.CategoryId).FirstOrDefault().ToString()),
                 Name = eventDB.GenericEvent.EventCategories.ToList().Select(x => x.Category.Name).FirstOrDefault().ToString(),
                 ImageName = eventDB.GenericEvent.EventCategories.ToList().Select(x => x.Category.ImageName).FirstOrDefault().ToString()
             };
+
+            eventModel.Flight = new FlightModel()
+            {
+                //AirportDeparture = eventDB
+            };
             return eventModel;
         }
 
-        public static RevenueModel ConvertToModel(UserEventHistory revenue)
+        public static RevenueModel ConvertToRevenueModel(UserEventHistory revenue)
         {
             RevenueModel revenueModel = new RevenueModel();
 
@@ -43,7 +48,7 @@ namespace PublicJournal.Models.Converter
             revenueModel.EventName = revenue.Event.Name;
             revenueModel.Revenues = revenue.Revenues;
             revenueModel.NoOfParticipants = revenue.NoOfPersons;
-
+            
             return revenueModel;
         }
 

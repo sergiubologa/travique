@@ -1,12 +1,14 @@
-﻿@{
+﻿@model PublicJournal.Models.Models.EventModel
+
+@{
     ViewBag.Title = "Event";
 }
 
 <div class="container-fluid fill menu-buffer text-center event-page-header" style="background-image:url('@Url.Content("~/Content/images/festival2.jpg")')">
     <div class="overlay">
-        <h1>Electric Castle Festival</h1>
-        <h2>Cluj-Napoca, Romania</h2>
-        <span>30.07 - 02.08 2015</span>
+        <h1>@Model.EventName</h1>
+        <h2>@Model.City, @Model.Country</h2>
+        <span>@Model.StartDate - @Model.EndDate</span>
     </div>
 </div>
 
@@ -15,7 +17,7 @@
         <div class="col-md-3" id="leftCol">
             <div class="img-rounded text-center price-box">
                 <span>price starting</span>
-                <h1>$990</h1>
+                <h1>@Model.PackagePrice</h1> Per person
             </div>
             <div class="img-rounded filter-box price-details-box">
                 <h2 class="text-center">Packages Include</h2>
@@ -24,8 +26,8 @@
                         <span class="glyphicon glyphicon-plane" aria-hidden="true"></span>
                     </div>
                     <div class="col-md-8 text-left">
-                        <p>LONDON - CLUJ</p>
-                        <p>CLUJ - LONDON</p>
+                        <p>@Model.Flight.AirportDeparture, @Model.Flight.CityDeparture - @Model.Flight.AirportLanding, @Model.Flight.CityLanding</p>
+                        <p>@Model.Flight.AirportLanding, @Model.Flight.CityLanding - @Model.Flight.AirportDeparture, @Model.Flight.CityDeparture</p>
                     </div>
                 </div>
                 <div class="row details">
@@ -46,7 +48,7 @@
                     </div>
                 </div>
                 <div class="text-center book-now-container">
-                    <a href="#" class="btn btn-primary btn-lg outline">Book now</a>
+                    <a href="/Events/Book/@Model.EventId" class="btn btn-primary btn-lg outline">Book now</a>
                 </div>
                 
             </div>

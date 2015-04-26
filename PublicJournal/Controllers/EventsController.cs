@@ -34,7 +34,9 @@ namespace PublicJournal.Controllers
 
         public ActionResult Event(int id)
         {
-            return View();
+            EventModel model = _iEventBus.GetEvent(id);
+
+            return View(model);
         }
 	}
 }
