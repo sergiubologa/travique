@@ -11,10 +11,12 @@ namespace PublicJournal.Controllers
     public class EventsController : Controller
     {
         private IEventBus _iEventBus;
+        private ICategoryBus _iCategoryBus;
 
-        public EventsController(IEventBus iEventBus)
+        public EventsController(IEventBus iEventBus, ICategoryBus iCategoryBus)
         {
-            _iEventBus = iEventBus;            
+            _iEventBus = iEventBus;
+            _iCategoryBus = iCategoryBus;
         }
 
         public ActionResult Index(int id)
@@ -23,8 +25,9 @@ namespace PublicJournal.Controllers
             
             // Create the EventsModel and return it to the view
             EventsModel model = new EventsModel();
+            model.Category = _iCategoryBus.GetCategory(id);
             model.ListEvents = _iEventBus.GetListEventsByCategoryId(id);
-            model.CategoryCssClass = "electric-music";
+            model.CategoryCssClass = model.Category.ImageName;
 
             return View(model);
         }
