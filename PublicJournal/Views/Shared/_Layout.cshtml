@@ -16,66 +16,30 @@
     @RenderBody()
     <footer class="container-fluid travique-footer">
         <div class="row">
-            <div class="col-sm-6 col-md-3">
+            <div class="col-sm-6 col-md-3 travique-footer-box text-left">
                 <img src="@Url.Content("~/Content/images/logo.png")" />
-                <p>&copy;&nbsp;2015 Travique</p>
-                <p>All rights reserved</p>
             </div>
-            <div class="col-sm-6 col-md-3 border">
-                <div class="col-md-6">
-                    <div><a>TRAVEL</a></div>
-                    <div><a>EXPLORERS</a></div>
-                    <div><a>NATURE</a></div>
-                    <div><a>SCIENCE</a></div>
-                    <div><a>ADVICES</a></div>
-                </div>
-                <div class="col-md-6">
-                    <div><a>About</a></div>
-                    <div><a>Contact</a></div>
-                    <div><a>Terms of Service</a></div>
-                    <div><a>Privacy Policy</a></div>
-                </div>
+            <div class="col-sm-6 col-md-6 travique-footer-box text-center">
+                <ul class="travique-footer-keywords">
+                    <li>TRAVEL</li>
+                    <li>EXPLORERS</li>
+                    <li>NATURE</li>
+                    <li>SCIENCE</li>
+                    <li>ADVICES</li>
+                </ul>
             </div>
-            <div class="col-sm-6 col-md-3 border">
-                <h4>FOLLOW US</h4>
+            <div class="col-sm-6 col-md-3 travique-footer-box text-right">
                 <ul>
                     <li>
-                        <a href="#">
-                            <img src="@Url.Content("~/Content/images/ic_facebook_light.png")">
-                            <span>Facebook</span>
-                        </a>
+                        <a href="https://www.facebook.com/pages/GoTravique/382319618620598" target="_blank"><img src="@Url.Content("~/Content/images/ic_facebook_light.png")"></a>
                     </li>
                     <li>
-                        <a href="#">
-                            <img src="@Url.Content("~/Content/images/ic_twitter_light.png")">
-                            <span>Twitter</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <img src="@Url.Content("~/Content/images/ic_instagram_light.png")">
-                            <span>Instagram</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="@Url.Content("~/Content/images/ic_rss_light.png")">
-                            <span>RSS</span>
-                        </a>
+                        <a href="https://twitter.com/GoTravique" target="_blank"><img src="@Url.Content("~/Content/images/ic_twitter_light.png")"></a>
                     </li>
                 </ul>
             </div>
-            <div class="col-sm-6 col-md-3">
-                <h4>SUBSCRIBE TO OUR NEWS</h4>
-                <p>A rover wearing a fuzzy suit doesn't alarm the real penguins.</p>
-                <form>
-                    <input type="text" />
-                    <input type="submit" />
-                </form>
-            </div>
         </div>
-    </footer>
+    </footer>    
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")

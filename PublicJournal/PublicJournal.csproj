@@ -216,6 +216,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -365,6 +366,7 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Account\LogIn.cshtml" />
     <Content Include="Views\Account\_ForgotPassword.cshtml" />
+    <Content Include="Views\Events\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

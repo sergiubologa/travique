@@ -1,53 +1,70 @@
 ﻿html, body {
     font-family: 'PT Sans', Arial, sans-serif;
 }
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+h1 {
+    font-size: 4em;
+}
 
 .top-buffer {
     margin-top: 20px;
 }
+.menu-buffer {
+    margin-top:80px;
+}
+
 .btn {
     padding: 14px 24px;
     border: 0 none;
     letter-spacing: 1px;
 }
- 
-.btn:focus, .btn:active:focus, .btn.active:focus {
-    outline: 0 none;
-}
- 
+
+    .btn:focus, .btn:active:focus, .btn.active:focus {
+        outline: 0 none;
+    }
+
 .btn-primary {
     background: #0099cc;
     color: #ffffff;
 }
- 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
-    background: #33a6cc;
-}
- 
-.btn-primary:active, .btn-primary.active {
-    background: #007299;
-    box-shadow: none;
-}
+
+    .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+        background: #33a6cc;
+    }
+
+    .btn-primary:active, .btn-primary.active {
+        background: #007299;
+        box-shadow: none;
+    }
+
 .btn.outline {
     background: none;
     padding: 12px 22px;
 }
+
 .btn-primary.outline {
     border: 1px solid #cecece;
     color: #cecece;
 }
+
 .btn-primary.focused {
-    color:#fff;
+    color: #fff;
 }
+
 .btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
     color: #fff;
     border-color: #fff;
 }
+
 .btn-primary.outline:active, .btn-primary.outline.active {
     border-color: #b9b9b9;
     color: #b9b9b9;
     box-shadow: none;
 }
+
 .navbar {
     height: 80px;
     margin-bottom: 0;
@@ -194,21 +211,21 @@ html, body {
         margin-right: 0;
     }
 
-    .travique-main-category-box.contemporary-music {
-        background-color: #8A4B7A;
-    }
+.contemporary-music {
+    background-color: #8A4B7A;
+}
 
-    .travique-main-category-box.electronic-music {
-        background-color: #019AE0;
-    }
+.electronic-music {
+    background-color: #019AE0;
+}
 
-    .travique-main-category-box.food-drink {
-        background-color: #ED3B3F;
-    }
+.food-drink {
+    background-color: #ED3B3F;
+}
 
-    .travique-main-category-box.unusual {
-        background-color: #89BE36;
-    }
+.unusual {
+    background-color: #89BE36;
+}
 
 .travique-main-partner-box {
     height: 160px;
@@ -218,24 +235,43 @@ html, body {
 }
 
 .travique-footer {
-    padding: 50px 100px;
+    padding-top:20px;
+    padding-bottom:20px;
     background-color: #3c3d41;
+    color: #aaa;
+}
+.travique-footer h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    color: #fff;
+}
+.travique-footer-box, .travique-footer-box .travique-logo  {
+    height: 40px;
+}
+.travique-footer ul {
+    list-style-type: none;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.travique-footer ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+.travique-footer .travique-footer-keywords {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 1em;
 }
 
-    .travique-footer div.border {
-        border-left: 1px solid #9E9E9E;
-    }
+div.events-header {
+    padding: 50px;    
+}
 
-    .travique-footer h4 {
-        color: #fff;
+    div.events-header h1 {
+        color:#fff;
     }
-
-    .travique-footer ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .travique-footer > div > div {
-        min-height: 150px;
-        padding: 0 30px;
+    div.events-header p {
+        color:#cecece;
     }
