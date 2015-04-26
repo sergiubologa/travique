@@ -33,8 +33,24 @@ namespace PublicJournal.Models.Converter
 
             eventModel.Flight = new FlightModel()
             {
-                //AirportDeparture = eventDB
+                AirportDeparture = eventDB.FlightInfo.DepartureAirport,
+                AirportLanding = eventDB.FlightInfo.LandingAirport,
+                TicketPrice = eventDB.FlightInfo.TicketPrice
             };
+
+            eventModel.Hotel = new HotelModel()
+            {
+                City = eventDB.HotelInfo.City,
+                ContactEmail = eventDB.HotelInfo.ContactEmail,
+                ContactPhone = eventDB.HotelInfo.ContactPhone,
+                Country = "Romania",
+                Description = eventDB.HotelInfo.Description,
+                Name = eventDB.HotelInfo.Name,
+                PricePerNight = eventDB.HotelInfo.RoomPrice
+            };
+
+            //eventModel.PackagePrice = eventModel.Hotel.
+
             return eventModel;
         }
 
