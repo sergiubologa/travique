@@ -11,6 +11,8 @@ namespace PublicJournal.Models.Models
     {        
         public int EventId {get; set;}
 
+        public int NoOfNightsIncluded { get; set; }
+
         public string EventName { get; set; }
 
         public string Description { get; set; }
