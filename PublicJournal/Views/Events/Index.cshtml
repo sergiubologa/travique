@@ -3,6 +3,14 @@
     ViewBag.Title = "Index";
 }
 
+@section scripts{
+    $('#sidebar').affix({
+      offset: {
+        top: 245
+      }
+    });
+}
+
 <div class="container-fluid menu-buffer text-center events-header @Model.CategoryCssClass">
     <h1>Electronic Music Events</h1>
     <p>The following is an incomplete list of music festivals that feature electronic music</p>
@@ -11,110 +19,71 @@
 <div class="container top-buffer">
     <div class="row">
         <div class="col-md-3" id="leftCol">
-
             <ul class="nav nav-stacked" id="sidebar">
-                <li><a href="#sec0">Section 0</a></li>
-                <li><a href="#sec1">Section 1</a></li>
-                <li><a href="#sec2">Section 2</a></li>
-                <li><a href="#sec3">Section 3</a></li>
-                <li><a href="#sec4">Section 4</a></li>
+                <li><a href="#sec0">Hungary</a></li>
+                <li><a href="#sec1">Romania</a></li>
+                <li><a href="#sec2">Croatia</a></li>
+                <li><a href="#sec3">Muntenegru</a></li>
+                <li><a href="#sec4">Serbia</a></li>
             </ul>
-
         </div>
-        <div class="col-md-9" id="mainCol">
-
-            <br>
-
-            <h2 id="sec0">Content</h2>
-            At Bootply we like to build simple Bootstrap templates that utilize the code Bootstap CSS without a lot of customization. Sure you can
-            find a lot of Bootstrap themes and inspiration, but these templates tend to be heavy on customization.
-
-
-
-            <hr class="col-md-12">
-            Rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores
-            eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-            sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut.
-            Rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores
-            eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-            sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut!
-
-
-
-            <h2 id="sec1">Content</h2>
-            <p>
-                Rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-                dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut.
-            </p>
+        <div class="col-md-9">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><h3>Hello.</h3></div>
-                        <div class="panel-body">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
-                            Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
-                            dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
-                            Aliquam in felis sit amet augue.
-                        </div>
+                <div class="col-md-4 event">
+                    <div class="image-container">
+                        <a href="@Url.Action("Event", "Events", new { id = 1 })"><img class="img-responsive" src="@Url.Content("~/Content/images/festival1.jpg")" /></a>
+                        <span class="electronic-music category" >Electronic Music</span>
                     </div>
+                    <h2>Untold Festival</h2>
+                    <strong>30.07 - 02.08 2015</strong>
+                    <p>A short description of the event so the user can have an idea what is all about...</p>
                 </div>
-                <div class="col-md-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><h3>Hello.</h3></div>
-                        <div class="panel-body">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
-                            Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
-                            dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
-                            Aliquam in felis sit amet augue.
-                        </div>
+                <div class="col-md-4 event">
+                    <div class="image-container">
+                        <a href="@Url.Action("Event", "Events", new { id = 1 })"><img class="img-responsive" src="@Url.Content("~/Content/images/festival2.jpg")" /></a>
+                        <span class="contemporary-music category">Electronic Music</span>
                     </div>
+                    <h2>Untold Festival</h2>
+                    <strong>30.07 - 02.08 2015</strong>
+                    <p>A short description of the event so the user can have an idea what is all about...</p>
                 </div>
-            </div>
-
-            <hr>
-
-            <h2 id="sec2">Section 2</h2>
-            <p>
-                Rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-                dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores
-                eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-                sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-                Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut!
-            </p>
-            <div class="row">
-                <div class="col-md-4"><img src="//placehold.it/300x300" class="img-responsive"></div>
-                <div class="col-md-4"><img src="//placehold.it/300x300" class="img-responsive"></div>
-                <div class="col-md-4"><img src="//placehold.it/300x300" class="img-responsive"></div>
-            </div>
-
-            <hr>
-
-            <h2 id="sec3">Section 3</h2>
-            Images are responsive sed mdo but sum are more fun peratis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-            totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores
-            eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-            sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-
-            <h2 id="sec4">Section 4</h2>
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-            totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores
-            eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-            sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-
-
-            <hr>
-            <h4><a href="http://bootply.com/75781">Edit on Bootply</a></h4>
-            <hr>
-
-
+                <div class="col-md-4 event">
+                    <div class="image-container">
+                        <a href="@Url.Action("Event", "Events", new { id = 1 })"><img class="img-responsive" src="@Url.Content("~/Content/images/festival3.jpg")" /></a>
+                        <span class="unusual category">Electronic Music</span>
+                    </div>
+                    <h2>Untold Festival</h2>
+                    <strong>30.07 - 02.08 2015</strong>
+                    <p>A short description of the event so the user can have an idea what is all about...</p>
+                </div>
+                <div class="col-md-4 event">
+                    <div class="image-container">
+                        <a href="@Url.Action("Event", "Events", new { id = 1 })"><img class="img-responsive" src="@Url.Content("~/Content/images/festival4.jpg")" /></a>
+                        <span class="food-drink category">Electronic Music</span>
+                    </div>
+                    <h2>Untold Festival</h2>
+                    <strong>30.07 - 02.08 2015</strong>
+                    <p>A short description of the event so the user can have an idea what is all about...</p>
+                </div>
+                <div class="col-md-4 event">
+                    <div class="image-container">
+                        <a href="@Url.Action("Event", "Events", new { id = 1 })"><img class="img-responsive" src="@Url.Content("~/Content/images/festival5.jpg")" /></a>
+                        <span class="food-drink category">Electronic Music</span>
+                    </div>
+                    <h2>Untold Festival</h2>
+                    <strong>30.07 - 02.08 2015</strong>
+                    <p>A short description of the event so the user can have an idea what is all about...</p>
+                </div>
+                <div class="col-md-4 event">
+                    <div class="image-container">
+                        <a href="@Url.Action("Event", "Events", new { id = 1 })"><img class="img-responsive" src="@Url.Content("~/Content/images/festival1.jpg")" /></a>
+                        <span class="contemporary-music category">Electronic Music</span>
+                    </div>
+                    <h2>Untold Festival</h2>
+                    <strong>30.07 - 02.08 2015</strong>
+                    <p>A short description of the event so the user can have an idea what is all about...</p>
+                </div>
+            </div>            
         </div>
     </div>
 </div>
