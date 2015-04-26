@@ -16,6 +16,7 @@ namespace PublicJournal.Dal
     {
         public FlightInfo()
         {
+            this.Events = new HashSet<Event>();
             this.UserEventHistories = new HashSet<UserEventHistory>();
         }
     
@@ -27,6 +28,7 @@ namespace PublicJournal.Dal
         public string LandingAirport { get; set; }
         public int TicketPrice { get; set; }
     
+        public virtual ICollection<Event> Events { get; set; }
         public virtual ICollection<UserEventHistory> UserEventHistories { get; set; }
     }
 }

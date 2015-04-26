@@ -16,6 +16,7 @@ namespace PublicJournal.Dal
     {
         public HotelInfo()
         {
+            this.Events = new HashSet<Event>();
             this.UserEventHistories = new HashSet<UserEventHistory>();
         }
     
@@ -31,6 +32,7 @@ namespace PublicJournal.Dal
         public string ContactEmail { get; set; }
         public string ContactPhone { get; set; }
     
+        public virtual ICollection<Event> Events { get; set; }
         public virtual ICollection<UserEventHistory> UserEventHistories { get; set; }
     }
 }
