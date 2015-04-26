@@ -25,14 +25,14 @@
             <div class="img-rounded filter-box">
                 <h2>Event Types</h2>
                 <ul class="nav nav-stacked" id="sidebar">
-                    <li><a class="category contemporary-music" href="#sec0">Contamporary Music</a></li>
-                    <li><a class="category electronic-music" href="#sec0">Electronic Music</a></li>
-                    <li><a class="category food-drink" href="#sec0">Food & Drink</a></li>
-                    <li><a class="category unusual" href="#sec0">Unusual</a></li>
-                    <li><a class="category contemporary-music" href="#sec0">Contamporary Music</a></li>
-                    <li><a class="category contemporary-music" href="#sec0">Contamporary Music</a></li>
-                    <li><a class="category contemporary-music" href="#sec0">Contamporary Music</a></li>
-                    <li><a class="category contemporary-music" href="#sec0">Contamporary Music</a></li>
+                    <li><a class="category contemporary-music" href="/events/index/1">Contemporary Music</a></li>
+                    <li><a class="category electronic-music" href="/events/index/2">Electronic Music</a></li>
+                    <li><a class="category food-drink" href="/events/index/3">Food & Drink</a></li>
+                    <li><a class="category unusual" href="/events/index/4">Unusual</a></li>
+                    <li><a class="category traditional" href="/events/index/5">Traditional</a></li>
+                    <li><a class="category art" href="/events/index/6">Art</a></li>
+                    <li><a class="category military" href="/events/index/7">Military</a></li>
+                    <li><a class="category films" href="/events/index/8">Films</a></li>
                 </ul>
             </div>
         </div>
@@ -49,16 +49,7 @@
                     <strong>@item.StartDate - @item.EndDate</strong>
                     <p>@item.Description</p>
                 </div>
-                }
-                <div class="col-md-4 event">
-                    <div class="image-container">
-                        <a href="@Url.Action("Event", "Events", new { id = 1 })"><img class="img-responsive" src="@Url.Content("~/Content/images/festival2.jpg")" /></a>
-                        <span class="contemporary-music category">Electronic Music</span>
-                    </div>
-                    <h2>Untold Festival</h2>
-                    <strong>30.07 - 02.08 2015</strong>
-                    <p>A short description of the event so the user can have an idea what is all about...</p>
-                </div>
+                }             
                 @*<div class="col-md-4 event">
                     <div class="image-container">
                         <a href="@Url.Action("Event", "Events", new { id = 1 })"><img class="img-responsive" src="@Url.Content("~/Content/images/festival3.jpg")" /></a>
