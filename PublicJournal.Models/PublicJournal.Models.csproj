@@ -94,6 +94,7 @@
     <Compile Include="Models\CategoryModel.cs" />
     <Compile Include="Models\EventModel.cs" />
     <Compile Include="Models\EventsModel.cs" />
+    <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\RevenueModel.cs" />
     <Compile Include="Models\UserModel.cs" />
