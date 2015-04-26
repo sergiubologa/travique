@@ -373,6 +373,7 @@
     <Content Include="Views\Account\_ForgotPassword.cshtml" />
     <Content Include="Views\Events\Index.cshtml" />
     <Content Include="Views\Events\Event.cshtml" />
+    <Content Include="Views\Events\ThankYou.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

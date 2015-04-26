@@ -437,6 +437,7 @@ div.filter-box {
 .details p {
     font-weight:bold;
     margin:0; text-transform:uppercase;
+    font-size:13px;
 }
 .book-now-container {
     padding:10px 0;
