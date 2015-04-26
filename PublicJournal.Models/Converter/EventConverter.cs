@@ -24,6 +24,8 @@ namespace PublicJournal.Models.Converter
             eventModel.ImageName = eventDB.ImageName;
             eventModel.Description = eventDB.Description;            
             eventModel.EventPrice = eventDB.TicketPrice;
+            eventModel.Country = "Romania";
+            eventModel.City = eventDB.City;
 
             eventModel.Category = new CategoryModel()
             {
@@ -51,6 +53,7 @@ namespace PublicJournal.Models.Converter
             };
 
             eventModel.PackagePrice = eventModel.Hotel.PricePerNight + eventModel.Flight.TicketPrice + eventModel.EventPrice;
+            eventModel.LongDescription = eventDB.LongDescription;
 
             return eventModel;
         }

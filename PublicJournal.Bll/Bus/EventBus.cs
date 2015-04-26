@@ -56,5 +56,19 @@ namespace PublicJournal.Bll.Bus
             List<UserEventHistory> listEventDB = _iUserEventHistoryDao.GetAllRevenues();
             return listEventDB.Select(x => EventConverter.ConvertToRevenueModel(x)).ToList();
         }
+
+        public bool SaveRevenue(int userId, int eventId)
+        {
+            Event eventDb = _iEventDao.GetEvent(eventId);
+            eventDb.UserEventHistories.Add(new UserEventHistory()
+            {
+                EventId = eventId,
+                UserId = userId,
+                NoOfPersons = 1,
+                Revenues = (eventDb.TicketPrice + eventDb.FlightInfo.TicketPrice + eventDb.HotelInfo.RoomPrice * eventDb.HotelInfo.RoomPrice) / 10
+            });            
+
+            return true;
+        }
     }
 }

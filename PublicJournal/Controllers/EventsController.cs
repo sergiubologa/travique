@@ -38,5 +38,20 @@ namespace PublicJournal.Controllers
             
             return View(model);
         }
+
+        public ActionResult Event(int id)
+        {           
+            if (Session["user"] == null)
+            {
+                return null;
+            }
+
+            EventModel model = _iEventBus.GetEvent(id);
+
+            UserModel user = (UserModel) Session["user"];
+
+            bool revenueSaved = _iEventBus.SaveRevenue(user.IdUser, id);
+            return View(model);
+        }
 	}
 }

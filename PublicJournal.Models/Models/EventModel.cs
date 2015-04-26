@@ -35,5 +35,7 @@ namespace PublicJournal.Models.Models
 
         public decimal EventPrice { get; set; }
 
+        public string LongDescription { get; set; }
+
     }
 }
